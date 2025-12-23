@@ -14,8 +14,7 @@ jobs:
     strategy:
       matrix:
         features:
-        - color
-        - hello
+        - base
         baseImage:
         - debian:latest
         - ubuntu:latest
@@ -35,8 +34,7 @@ jobs:
     strategy:
       matrix:
         features:
-        - color
-        - hello
+        - base
     steps:
     - uses: actions/checkout@v4
 
