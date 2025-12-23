@@ -10,7 +10,6 @@ APT_PACKAGES=(
     'gcc-avr'
     'gcc'
     'libc6-dev'
-    'usbutils' # lsusb et al.
 )
 CARGO_BINSTALL_PACKAGES=(
     "ravedude@${RAVEDUDE_VERSION}"
@@ -33,11 +32,14 @@ cargo_binstall() {
 install_avrdude() {
     # One of Linux_32bit, Linux_64bit, Linux_ARMv6, Linux_ARM64
     arch=$(dpkg --print-architecture)
-    case "${arch}" in    
-        'amd64') arch='Linux_64bit' ;;
-        'armhf') arch='Linux_ARMv6' ;;
-        'arm64') arch='Linux_ARM64' ;;
-        *) echo >&2 "Unsupported architecture: ${arch}"; exit 1 ;;
+    case "${arch}" in
+    'amd64') arch='Linux_64bit' ;;
+    'armhf') arch='Linux_ARMv6' ;;
+    'arm64') arch='Linux_ARM64' ;;
+    *)
+        echo >&2 "Unsupported architecture: ${arch}"
+        exit 1
+        ;;
     esac
     url="https://github.com/avrdudes/avrdude/releases/download/v${AVRDUDE_VERSION}/avrdude_v${AVRDUDE_VERSION}_${arch}.tar.gz"
     curl -L -o /tmp/avrdude.tar.gz "${url}"
