@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# shellcheck source=../base/library.sh
+source /usr/local/share/devcontainer-features/base/library.sh
 
 # renovate: datasource=github-releases depName=avrdude packageName=avrdudes/avrdude versioning=semver-coerced
 AVRDUDE_VERSION=v8.1
@@ -16,20 +18,6 @@ APT_PACKAGES=(
 CARGO_BINSTALL_PACKAGES=(
     "ravedude@${RAVEDUDE_VERSION}"
 )
-
-apt_install() {
-    export DEBIAN_FRONTEND=noninteractive
-    apt-get update
-    apt-get install -y --no-install-recommends "$@"
-}
-
-cargo_binstall() {
-    cargo-binstall \
-        --no-confirm \
-        --strategies "crate-meta-data,quick-install" \
-        --install-path "/usr/local/bin" \
-        "$@"
-}
 
 install_avrdude() {
     # One of Linux_32bit, Linux_64bit, Linux_ARMv6, Linux_ARM64
@@ -50,8 +38,8 @@ install_avrdude() {
 }
 
 main() {
-    apt_install "${APT_PACKAGES[@]}"
-    cargo_binstall "${CARGO_BINSTALL_PACKAGES[@]}"
+    base__apt_install "${APT_PACKAGES[@]}"
+    base__cargo_binstall "${CARGO_BINSTALL_PACKAGES[@]}"
     install_avrdude
 }
 
