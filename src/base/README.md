@@ -13,6 +13,22 @@ Foundation for all other features.
 
 
 
+## Customizations
+
+### VS Code Extensions
+
+- `eamodio.gitlens`
+- `tamasfe.even-better-toml`
+
+## Installed tools
+
+- `curl`
+- `rustup`
+- `cargo-binstall`
+
+## Miscellaneous
+
+This feature configures the shell history to be persistent across devcontainer rebuilds.
 
 
 ---

@@ -13,6 +13,14 @@ Installs the AVR toolchain
 
 
 
+## Customizations
+
+### VS Code Extensions
+
+- `BarbossHack.crates-io`
+- `rust-lang.rust-analyzer`
+- `vadimcn.vscode-lldb`
+
 
 
 ---
