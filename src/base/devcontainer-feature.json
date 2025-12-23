@@ -1,0 +1,6 @@
+{
+    "id": "base",
+    "version": "0.1.0",
+    "name": "Base",
+    "description": "Foundation for all other features."
+}
