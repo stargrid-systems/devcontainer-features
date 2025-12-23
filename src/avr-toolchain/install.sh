@@ -3,7 +3,7 @@ set -euo pipefail
 
 
 # renovate: datasource=github-releases depName=avrdude packageName=avrdudes/avrdude versioning=semver-coerced
-AVRDUDE_VERSION=v8.0
+AVRDUDE_VERSION=v8.1
 # renovate: datasource=crate packageName=ravedude versioning=semver
 RAVEDUDE_VERSION=0.2.0
 
