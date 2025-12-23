@@ -4,7 +4,7 @@ set -euo pipefail
 LIFECYCLE_DIR='/usr/local/share/devcontainer-features/base'
 
 # renovate: datasource=github-releases depName=cargo-binstall packageName=cargo-bins/cargo-binstall versioning=semver
-CARGO_BINSTALL_VERSION='1.16.3'
+CARGO_BINSTALL_VERSION=1.16.3
 APT_PACKAGES=(
     'ca-certificates'
     'curl'

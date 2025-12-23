@@ -3,9 +3,9 @@ set -euo pipefail
 
 
 # renovate: datasource=github-releases depName=avrdude packageName=avrdudes/avrdude versioning=semver-coerced
-AVRDUDE_VERSION='8.0'
+AVRDUDE_VERSION=v8.0
 # renovate: datasource=crate packageName=ravedude versioning=semver
-RAVEDUDE_VERSION='0.2.0'
+RAVEDUDE_VERSION=0.2.0
 
 APT_PACKAGES=(
     'avr-libc'
@@ -43,7 +43,7 @@ install_avrdude() {
         exit 1
         ;;
     esac
-    url="https://github.com/avrdudes/avrdude/releases/download/v${AVRDUDE_VERSION}/avrdude_v${AVRDUDE_VERSION}_${arch}.tar.gz"
+    url="https://github.com/avrdudes/avrdude/releases/download/${AVRDUDE_VERSION}/avrdude_${AVRDUDE_VERSION}_${arch}.tar.gz"
     curl -L -o /tmp/avrdude.tar.gz "${url}"
     tar -xzf /tmp/avrdude.tar.gz -C /usr/local --strip-components=1
     rm /tmp/avrdude.tar.gz
