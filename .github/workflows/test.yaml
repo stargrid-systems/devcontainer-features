@@ -20,7 +20,7 @@ jobs:
         - ubuntu:latest
         - mcr.microsoft.com/devcontainers/base:ubuntu
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 
     - name: "Install latest devcontainer CLI"
       run: npm install -g @devcontainers/cli
@@ -36,7 +36,7 @@ jobs:
         features:
         - base
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 
     - name: "Install latest devcontainer CLI"
       run: npm install -g @devcontainers/cli
@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 
     - name: "Install latest devcontainer CLI"
       run: npm install -g @devcontainers/cli
