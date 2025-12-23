@@ -5,5 +5,14 @@
     "description": "Installs the AVR toolchain",
     "dependsOn": {
         "ghcr.io/stargrid-systems/devcontainer-features/base:0.1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "BarbossHack.crates-io",
+                "rust-lang.rust-analyzer",
+                "vadimcn.vscode-lldb",
+            ]
+        }
     }
 }

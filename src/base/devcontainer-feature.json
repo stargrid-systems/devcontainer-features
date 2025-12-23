@@ -12,5 +12,13 @@
     ],
     "onCreateCommand": {
         "base": "/usr/local/share/devcontainer-features/base/oncreate.sh"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "eamodio.gitlens",
+                "tamasfe.even-better-toml",
+            ]
+        }
     }
 }
