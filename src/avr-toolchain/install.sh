@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# TODO(renovate): track
-AVRDUDE_VERSION='8.1'
-RAVEDUDE_VERSION='0.2.2'
+
+# renovate: datasource=github-releases depName=avrdude packageName=avrdudes/avrdude versioning=semver-coerced
+AVRDUDE_VERSION='8.0'
+# renovate: datasource=crate packageName=ravedude versioning=semver
+RAVEDUDE_VERSION='0.2.0'
 
 APT_PACKAGES=(
     'avr-libc'
