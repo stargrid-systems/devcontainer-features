@@ -4,8 +4,9 @@ set -euo pipefail
 export DEBIAN_FRONTEND=noninteractive
 
 apt_packages=(
-    'curl'
     'ca-certificates'
+    'curl'
+    'rustup'
 )
 apt-get update
 apt-get install -y --no-install-recommends "${apt_packages[@]}"

@@ -10,7 +10,6 @@ APT_PACKAGES=(
     'gcc-avr'
     'gcc'
     'libc6-dev'
-    'rustup'
     'usbutils' # lsusb et al.
 )
 CARGO_BINSTALL_PACKAGES=(
