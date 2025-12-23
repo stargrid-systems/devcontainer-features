@@ -6,5 +6,6 @@ set -euo pipefail
 source dev-container-features-test-lib
 
 check 'cargo-binstall is installed' cargo-binstall -V
+check 'shellhistory onCreate script configures HISTFILE for bash' grep 'export HISTFILE=/mnt/shellhistory/.bash_history' "$HOME/.bashrc"
 
 reportResults

@@ -2,5 +2,15 @@
     "id": "base",
     "version": "0.1.0",
     "name": "Base",
-    "description": "Foundation for all other features."
+    "description": "Foundation for all other features.",
+    "mounts": [
+        {
+            "source": "${devcontainerId}-shellhistory",
+            "target": "/mnt/shellhistory",
+            "type": "volume"
+        }
+    ],
+    "onCreateCommand": {
+        "base": "/usr/local/share/devcontainer-features/base/oncreate.sh"
+    }
 }
