@@ -16,7 +16,7 @@
   ],
   "devcontainer": {
     "managerFilePatterns": [
-      "src/**/devcontainer-feature.json"
+      "/(^|/)devcontainer-feature.json$/"
     ]
   }
 }
