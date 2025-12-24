@@ -4,6 +4,7 @@
 - `curl`
 - `git`
 - `gpg`
+- `make`
 - `rustup`
 
 ## Miscellaneous

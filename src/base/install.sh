@@ -14,6 +14,7 @@ APT_PACKAGES=(
     'curl'
     'git'
     'gnupg'
+    'make'
     'rustup'
     'sudo'
     'zsh'
