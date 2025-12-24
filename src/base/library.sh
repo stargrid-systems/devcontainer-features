@@ -8,6 +8,7 @@ base__apt_install() {
 }
 
 base__apt_cleanup() {
+    declare -x DEBIAN_FRONTEND=noninteractive
     apt-get -y clean
     rm -rf /var/lib/apt/lists/*
 }
