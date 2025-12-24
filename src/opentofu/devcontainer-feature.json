@@ -1,0 +1,16 @@
+{
+    "id": "opentofu",
+    "version": "0.1.0",
+    "name": "OpenTofu",
+    "description": "",
+    "dependsOn": {
+        "ghcr.io/stargrid-systems/devcontainer-features/base:0.2.0": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "hashicorp.terraform"
+            ]
+        }
+    }
+}
