@@ -3,6 +3,7 @@
 - `cargo-binstall`
 - `curl`
 - `git`
+- `gpg`
 - `rustup`
 
 ## Miscellaneous
