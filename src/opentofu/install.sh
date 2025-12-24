@@ -5,7 +5,7 @@ set -euo pipefail
 source /usr/local/share/devcontainer-features/base/library.sh
 
 # renovate: datasource=github-releases depName=opentofu packageName=opentofu/opentofu versioning=semver
-OPENTOFU_VERSION=1.11.0
+OPENTOFU_VERSION=1.11.2
 
 install_opentofu() {
     local arch # One of: 386, amd64, arm, arm64
