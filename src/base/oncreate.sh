@@ -4,13 +4,9 @@ set -euo pipefail
 HISTORY_MOUNT_DIR='/mnt/shellhistory'
 
 chown_to_user() {
-    local dir
-    dir="${1}"
-
+    local dir="${1}"
     if [ ! -w "${dir}" ]; then
-        echo "Fixing permissions of '${dir}'..."
         sudo chown -R "$(id -u):$(id -g)" "${dir}"
-        echo "Done!"
     fi
 }
 

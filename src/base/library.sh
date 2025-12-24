@@ -4,6 +4,12 @@ base__apt_install() {
     declare -x DEBIAN_FRONTEND=noninteractive
     apt-get update || return
     apt-get install -y --no-install-recommends "$@" || return
+    base__apt_cleanup
+}
+
+base__apt_cleanup() {
+    apt-get -y clean
+    rm -rf /var/lib/apt/lists/*
 }
 
 base__cargo_binstall() {

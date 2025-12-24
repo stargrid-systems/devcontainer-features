@@ -13,6 +13,7 @@ APT_PACKAGES=(
     'curl'
     'git'
     'rustup'
+    'zsh'
 )
 
 install_cargo_binstall() {
@@ -26,10 +27,34 @@ install_scripts() {
     cp library.sh oncreate.sh "${TARGET_SCRIPTS_DIR}"
 }
 
+prepare_dev_user() {
+    if [ "${REMOTE_USER}" = "root" ]; then
+        echo >&2 "REMOTE_USER must not be 'root'."
+        exit 1
+    fi
+
+    # Create the user
+    useradd \
+        --home-dir "$_REMOTE_USER_HOME" \
+        --gid "$_REMOTE_USER" \
+        --groups 'sudo' \
+        --create-home \
+        --shell '/usr/bin/zsh' \
+        "$_REMOTE_USER"
+    # Allow passwordless sudo for the user
+    echo "$_REMOTE_USER ALL=\(root\) NOPASSWD:ALL" >"/etc/sudoers.d/$_REMOTE_USER-sudo"
+    chmod 0440 "/etc/sudoers.d/$_REMOTE_USER-sudo"
+}
+
 main() {
     install_scripts
     base__apt_install "${APT_PACKAGES[@]}"
+    # Since we're likely the first feature to install apt packages, let's clean up the system while we're here
+    apt-get -y upgrade --no-install-recommends
+    apt-get autoremove -y
+
     install_cargo_binstall
+    prepare_dev_user
 }
 
 main "$@"
