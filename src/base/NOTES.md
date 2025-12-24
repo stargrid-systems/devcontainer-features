@@ -1,8 +1,9 @@
 ## Installed tools
 
-- `curl`
-- `rustup`
 - `cargo-binstall`
+- `curl`
+- `git`
+- `rustup`
 
 ## Miscellaneous
 

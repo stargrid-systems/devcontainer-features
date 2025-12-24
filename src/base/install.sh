@@ -11,6 +11,7 @@ CARGO_BINSTALL_VERSION=1.16.5
 APT_PACKAGES=(
     'ca-certificates'
     'curl'
+    'git'
     'rustup'
 )
 
