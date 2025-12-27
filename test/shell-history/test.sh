@@ -5,6 +5,6 @@ set -euo pipefail
 # Provides the 'check' and 'reportResults' commands.
 source dev-container-features-test-lib
 
-check 'shellhistory onCreate script configures HISTFILE for bash' grep 'export HISTFILE=/mnt/shellhistory/.bash_history' "$HOME/.bashrc"
+check 'shellhistory onCreate script configures HISTFILE for bash' grep 'export HISTFILE=/mnt/shell-history/.bash_history' "$HOME/.bashrc"
 
 reportResults
