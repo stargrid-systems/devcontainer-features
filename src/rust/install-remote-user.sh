@@ -2,9 +2,7 @@
 set -euo pipefail
 
 RUST_TOOLCHAIN=nightly-2025-12-27
-TARGETS=(
-    'avr-none'
-)
+TARGETS=()
 COMPONENTS=(
     'clippy'
     'miri'
