@@ -6,3 +6,4 @@
 - `gpg`
 - `make`
 - `rustup`
+- `sudo`

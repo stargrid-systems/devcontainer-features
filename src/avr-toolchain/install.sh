@@ -40,4 +40,3 @@ install_avrdude() {
 base__apt_install "${APT_PACKAGES[@]}"
 base__cargo_binstall "${CARGO_BINSTALL_PACKAGES[@]}"
 install_avrdude
-rustup target add avr-none

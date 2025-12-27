@@ -15,6 +15,7 @@ APT_PACKAGES=(
     'gnupg'
     'make'
     'rustup'
+    'sudo'
 )
 
 install_cargo_binstall() {
