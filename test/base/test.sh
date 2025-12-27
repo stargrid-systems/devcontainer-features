@@ -6,9 +6,8 @@ set -euo pipefail
 source dev-container-features-test-lib
 
 check 'cargo-binstall is installed' cargo-binstall -V
-check 'shellhistory onCreate script configures HISTFILE for bash' grep 'export HISTFILE=/mnt/shellhistory/.bash_history' "$HOME/.bashrc"
-check 'library.sh is present' test -f /usr/local/share/devcontainer-features/base/library.sh
-check 'library.sh can be sourced' bash -c 'source /usr/local/share/devcontainer-features/base/library.sh'
+check 'library.sh is present' test -f /usr/local/share/devcontainers/base/library.sh
+check 'library.sh can be sourced' bash -c 'source /usr/local/share/devcontainers/base/library.sh'
 check 'git is installed' git --version
 
 reportResults

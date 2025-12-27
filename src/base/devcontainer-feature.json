@@ -3,21 +3,11 @@
     "version": "0.2.0",
     "name": "Base",
     "description": "Foundation for all other features.",
-    "mounts": [
-        {
-            "source": "${devcontainerId}-shellhistory",
-            "target": "/mnt/shellhistory",
-            "type": "volume"
-        }
-    ],
-    "onCreateCommand": {
-        "base": "/usr/local/share/devcontainer-features/base/oncreate.sh"
-    },
     "customizations": {
         "vscode": {
             "extensions": [
                 "eamodio.gitlens",
-                "tamasfe.even-better-toml",
+                "tamasfe.even-better-toml"
             ]
         }
     }

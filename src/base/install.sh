@@ -4,7 +4,7 @@ set -euo pipefail
 # shellcheck source=./library.sh
 source ./library.sh
 
-TARGET_SCRIPTS_DIR='/usr/local/share/devcontainer-features/base'
+TARGET_SCRIPTS_DIR='/usr/local/share/devcontainers/base'
 
 # renovate: datasource=github-releases depName=cargo-binstall packageName=cargo-bins/cargo-binstall versioning=semver
 CARGO_BINSTALL_VERSION=1.16.5
@@ -25,7 +25,7 @@ install_cargo_binstall() {
 
 install_scripts() {
     mkdir -p "${TARGET_SCRIPTS_DIR}"
-    cp library.sh oncreate.sh "${TARGET_SCRIPTS_DIR}"
+    cp library.sh "${TARGET_SCRIPTS_DIR}"
 }
 
 main() {

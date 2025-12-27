@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # shellcheck source=../base/library.sh
-source /usr/local/share/devcontainer-features/base/library.sh
+source /usr/local/share/devcontainers/base/library.sh
 
 # renovate: datasource=github-releases depName=opentofu packageName=opentofu/opentofu versioning=semver
 OPENTOFU_VERSION=1.11.2

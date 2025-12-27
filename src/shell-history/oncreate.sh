@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-HISTORY_MOUNT_DIR='/mnt/shellhistory'
+HISTORY_MOUNT_DIR='/mnt/shell-history'
 
 chown_to_user() {
     local dir="${1}"

@@ -11,7 +11,7 @@
             "extensions": [
                 "BarbossHack.crates-io",
                 "rust-lang.rust-analyzer",
-                "vadimcn.vscode-lldb",
+                "vadimcn.vscode-lldb"
             ]
         }
     }
