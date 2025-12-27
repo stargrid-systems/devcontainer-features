@@ -20,15 +20,14 @@ Foundation for all other features.
 - `eamodio.gitlens`
 - `tamasfe.even-better-toml`
 
-## Installed tools
+## Tools
 
-- `curl`
-- `rustup`
 - `cargo-binstall`
-
-## Miscellaneous
-
-This feature configures the shell history to be persistent across devcontainer rebuilds.
+- `curl`
+- `git`
+- `gpg`
+- `make`
+- `rustup`
 
 
 ---
