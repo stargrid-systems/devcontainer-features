@@ -1,0 +1,18 @@
+{
+    "id": "rust",
+    "version": "0.1.0",
+    "name": "Rust",
+    "description": "",
+    "dependsOn": {
+        "ghcr.io/stargrid-systems/devcontainer-features/base:0": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "BarbossHack.crates-io",
+                "rust-lang.rust-analyzer",
+                "vadimcn.vscode-lldb"
+            ]
+        }
+    }
+}

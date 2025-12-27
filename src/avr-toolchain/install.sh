@@ -37,10 +37,7 @@ install_avrdude() {
     rm /tmp/avrdude.tar.gz
 }
 
-main() {
-    base__apt_install "${APT_PACKAGES[@]}"
-    base__cargo_binstall "${CARGO_BINSTALL_PACKAGES[@]}"
-    install_avrdude
-}
-
-main "$@"
+base__apt_install "${APT_PACKAGES[@]}"
+base__cargo_binstall "${CARGO_BINSTALL_PACKAGES[@]}"
+install_avrdude
+rustup target add avr-none
