@@ -17,7 +17,7 @@ CARGO_NEXTEST_VERSION=0.9.116
 # renovate: datasource=github-releases depName=cargo-semver-checks packageName=obi1kenobi/cargo-semver-checks
 CARGO_SEMVER_CHECKS_VERSION=0.45.0
 # renovate: datasource=github-releases depName=cargo-shear packageName=Boshen/cargo-shear
-CARGO_SHEAR_VERSION=1.7.1
+CARGO_SHEAR_VERSION=1.9.1
 # renovate: datasource=github-releases depName=cargo-udeps packageName=est31/cargo-udeps
 CARGO_UDEPS_VERSION=0.1.60
 # renovate: datasource=github-releases depName=kani packageName=model-checking/kani
