@@ -17,7 +17,9 @@ rustup toolchain install \
     --component="${COMPONENTS_CSV}" \
     "${RUST_TOOLCHAIN}"
 rustup default "${RUST_TOOLCHAIN}"
-rustup target add "${TARGETS[@]}"
+if [ ${#TARGETS[@]} -gt 0 ]; then
+    rustup target add "${TARGETS[@]}"
+fi
 
 # Run kani first-time setup
 cargo-kani setup
