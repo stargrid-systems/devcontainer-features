@@ -5,5 +5,4 @@
 - `git`
 - `gpg`
 - `make`
-- `rustup`
 - `sudo`

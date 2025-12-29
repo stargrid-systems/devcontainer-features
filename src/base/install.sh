@@ -14,7 +14,6 @@ APT_PACKAGES=(
     'git'
     'gnupg'
     'make'
-    'rustup'
     'sudo'
 )
 
