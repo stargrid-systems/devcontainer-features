@@ -12,8 +12,6 @@ APT_PACKAGES=(
     'ca-certificates'
     'curl'
     'git'
-    'gnupg'
-    'make'
     'sudo'
 )
 
