@@ -1,0 +1,13 @@
+{
+    "id": "bash",
+    "version": "0.1.0",
+    "name": "Bash",
+    "description": "",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mads-hartmann.bash-ide-vscode"
+            ]
+        }
+    }
+}
