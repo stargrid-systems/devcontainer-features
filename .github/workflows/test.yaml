@@ -23,6 +23,7 @@ jobs:
         - opentofu
         - rust
         - shell-history
+        - typescript
         baseImage:
         - debian:13
     steps:
@@ -47,6 +48,7 @@ jobs:
         - opentofu
         - rust
         - shell-history
+        - typescript
     steps:
     - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 

@@ -1,0 +1,20 @@
+{
+    "id": "typescript",
+    "version": "0.1.0",
+    "name": "TypeScript",
+    "description": "",
+    "dependsOn": {
+        "ghcr.io/stargrid-systems/devcontainer-features/base:0": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "Prettier.prettier-vscode"
+            ],
+            "settings": {
+                "editor.defaultFormatter": "prettier.prettier-vscode"
+            }
+        }
+    }
+}
