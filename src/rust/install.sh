@@ -27,6 +27,7 @@ RELEASE_PLZ_VERSION=0.3.150
 
 APT_PACKAGES=(
     'cmake'        # Unfortunately used by some rust crates
+    'gcc'          # Required for building rust crates with C/C++ code
     'libclang-dev' # Required for 'bindgen'
     'rustup'
 )
