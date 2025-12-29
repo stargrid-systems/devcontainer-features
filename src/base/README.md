@@ -27,7 +27,7 @@ Foundation for all other features.
 - `git`
 - `gpg`
 - `make`
-- `rustup`
+- `sudo`
 
 
 ---
