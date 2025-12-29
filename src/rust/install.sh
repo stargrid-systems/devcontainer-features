@@ -44,11 +44,6 @@ CARGO_BINSTALL_PACKAGES=(
     "release-plz@${RELEASE_PLZ_VERSION}"
 )
 
-# TODO: remove for next version of devcontainers/base
-if ! command -v sudo >/dev/null 2>&1; then
-    APT_PACKAGES+=('sudo')
-fi
-
 base__apt_install "${APT_PACKAGES[@]}"
 # TODO: we should support passing a secret github token to cargo-binstall to avoid getting rate-limited
 base__cargo_binstall "${CARGO_BINSTALL_PACKAGES[@]}"
