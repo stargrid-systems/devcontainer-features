@@ -5,4 +5,6 @@ set -euo pipefail
 # Provides the 'check' and 'reportResults' commands.
 source dev-container-features-test-lib
 
+check 'node is installed' node --version
+
 reportResults

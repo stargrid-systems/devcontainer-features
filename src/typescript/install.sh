@@ -5,7 +5,7 @@ set -euo pipefail
 source /usr/local/share/devcontainers/base/library.sh
 
 APT_PACKAGES=(
-    'node'
+    'nodejs'
 )
 
 base__apt_install "${APT_PACKAGES[@]}"
