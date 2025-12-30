@@ -6,6 +6,7 @@ source /usr/local/share/devcontainers/base/library.sh
 
 APT_PACKAGES=(
     'nodejs'
+    'npm'
 )
 
 base__apt_install "${APT_PACKAGES[@]}"
