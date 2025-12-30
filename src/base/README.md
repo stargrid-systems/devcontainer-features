@@ -25,8 +25,6 @@ Foundation for all other features.
 - `cargo-binstall`
 - `curl`
 - `git`
-- `gpg`
-- `make`
 - `sudo`
 
 
