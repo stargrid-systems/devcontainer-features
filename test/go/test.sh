@@ -6,5 +6,7 @@ set -euo pipefail
 source dev-container-features-test-lib
 
 check 'go is installed' go version
+check 'golangci-lint is installed' golangci-lint --version
+check 'goreleaser is installed' goreleaser --version
 
 reportResults
