@@ -1,0 +1,9 @@
+{
+    "id": "oras",
+    "version": "0.1.0",
+    "name": "Oras",
+    "description": "",
+    "dependsOn": {
+        "ghcr.io/stargrid-systems/devcontainer-features/base:0": {}
+    }
+}
