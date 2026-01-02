@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "simple",
+  "packages": {
+    "src/avr-toolchain": {
+      "package-name": "avr-toolchain",
+      "extra-files": ["devcontainer-feature.json"]
+    },
+    "src/base": {
+      "package-name": "base",
+      "extra-files": ["devcontainer-feature.json"]
+    },
+    "src/bash": {
+      "package-name": "bash",
+      "extra-files": ["devcontainer-feature.json"]
+    },
+    "src/go": {
+      "package-name": "go",
+      "extra-files": ["devcontainer-feature.json"]
+    },
+    "src/opentofu": {
+      "package-name": "opentofu",
+      "extra-files": ["devcontainer-feature.json"]
+    },
+    "src/oras": {
+      "package-name": "oras",
+      "extra-files": ["devcontainer-feature.json"]
+    },
+    "src/rust": {
+      "package-name": "rust",
+      "extra-files": ["devcontainer-feature.json"]
+    },
+    "src/shell-history": {
+      "package-name": "shell-history",
+      "extra-files": ["devcontainer-feature.json"]
+    },
+    "src/typescript": {
+      "package-name": "typescript",
+      "extra-files": ["devcontainer-feature.json"]
+    }
+  }
+}
