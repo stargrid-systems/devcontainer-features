@@ -22,6 +22,7 @@ jobs:
           - go
           - opentofu
           - oras
+          - release-please
           - rust
           - shell-history
           - typescript
@@ -48,6 +49,7 @@ jobs:
           - go
           - opentofu
           - oras
+          - release-please
           - rust
           - shell-history
           - typescript
