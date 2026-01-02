@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.0.0...base-v1.1.0) (2026-01-02)
+
+
+### Features
+
+* add npm to base ([#32](https://github.com/stargrid-systems/devcontainer-features/issues/32)) ([2fa4314](https://github.com/stargrid-systems/devcontainer-features/commit/2fa431498a4052e6c99a9d56fbab99cdfd19652d))
+
 ## [1.0.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v0.3.0...base-v1.0.0) (2026-01-02)
 
 
