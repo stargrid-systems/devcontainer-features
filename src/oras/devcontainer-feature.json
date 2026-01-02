@@ -4,6 +4,6 @@
     "name": "Oras",
     "description": "",
     "dependsOn": {
-        "ghcr.io/stargrid-systems/devcontainer-features/base:0": {}
+        "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
     }
 }

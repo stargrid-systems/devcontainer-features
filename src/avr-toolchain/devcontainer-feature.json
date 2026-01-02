@@ -4,7 +4,7 @@
     "name": "AVR Toolchain",
     "description": "Installs the AVR toolchain",
     "dependsOn": {
-        "ghcr.io/stargrid-systems/devcontainer-features/base:0": {}
+        "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
     },
     "customizations": {
         "vscode": {
