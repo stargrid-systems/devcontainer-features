@@ -14,12 +14,12 @@ base__apt_cleanup() {
 }
 
 base__npm_install() {
-    sudo -u "$_REMOTE_USER" npm install --global "$@" || return
+    npm install --global "$@" || return
     base__npm_cleanup
 }
 
 base__npm_cleanup() {
-    sudo -u "$_REMOTE_USER" npm cache clean --force || return
+    npm cache clean --force || return
 }
 
 base__cargo_binstall() {
