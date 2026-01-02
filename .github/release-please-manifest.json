@@ -1,11 +1,11 @@
 {
-  "src/avr-toolchain": "0.1.2",
-  "src/base": "0.3.0",
-  "src/bash": "0.1.0",
-  "src/go": "0.1.1",
-  "src/opentofu": "0.1.1",
-  "src/oras": "0.1.0",
-  "src/rust": "0.1.1",
+  "src/avr-toolchain": "0.2.0",
+  "src/base": "1.0.0",
+  "src/bash": "0.2.0",
+  "src/go": "0.2.0",
+  "src/opentofu": "0.2.0",
+  "src/oras": "0.2.0",
+  "src/rust": "0.2.0",
   "src/shell-history": "0.1.2",
-  "src/typescript": "0.1.1"
+  "src/typescript": "0.2.0"
 }

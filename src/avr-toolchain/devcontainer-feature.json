@@ -1,6 +1,6 @@
 {
     "id": "avr-toolchain",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "name": "AVR Toolchain",
     "description": "Installs the AVR toolchain",
     "dependsOn": {
