@@ -13,7 +13,7 @@ CARGO_DEB_VERSION=3.6.2
 # renovate: datasource=github-releases depName=cargo-deny packageName=EmbarkStudios/cargo-deny
 CARGO_DENY_VERSION=0.18.9
 # renovate: datasource=crate packageName=cargo-nextest versioning=semver
-CARGO_NEXTEST_VERSION=0.9.116
+CARGO_NEXTEST_VERSION=0.9.117
 # renovate: datasource=github-releases depName=cargo-semver-checks packageName=obi1kenobi/cargo-semver-checks
 CARGO_SEMVER_CHECKS_VERSION=0.45.0
 # renovate: datasource=github-releases depName=cargo-shear packageName=Boshen/cargo-shear
