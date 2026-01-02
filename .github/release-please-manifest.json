@@ -7,5 +7,6 @@
   "src/oras": "0.2.0",
   "src/rust": "0.2.0",
   "src/shell-history": "0.1.2",
-  "src/typescript": "0.2.0"
+  "src/typescript": "0.2.0",
+  "src/release-please": "1.0.0"
 }
