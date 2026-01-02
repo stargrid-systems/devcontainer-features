@@ -13,6 +13,15 @@ base__apt_cleanup() {
     rm -rf /var/lib/apt/lists/*
 }
 
+base__npm_install() {
+    sudo -u "$_REMOTE_USER" npm install --global "$@" || return
+    base__npm_cleanup
+}
+
+base__npm_cleanup() {
+    sudo -u "$_REMOTE_USER" npm cache clean --force || return
+}
+
 base__cargo_binstall() {
     cargo-binstall \
         --no-confirm \
