@@ -1,18 +1,18 @@
 {
-    "id": "rust",
-    "version": "0.2.0",
-    "name": "Rust",
-    "description": "",
-    "dependsOn": {
-        "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "BarbossHack.crates-io",
-                "rust-lang.rust-analyzer",
-                "vadimcn.vscode-lldb"
-            ]
-        }
+  "id": "rust",
+  "version": "0.2.0",
+  "name": "Rust",
+  "description": "",
+  "dependsOn": {
+    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "BarbossHack.crates-io",
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb"
+      ]
     }
+  }
 }

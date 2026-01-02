@@ -1,20 +1,17 @@
 {
-    "id": "typescript",
-    "version": "0.2.0",
-    "name": "TypeScript",
-    "description": "",
-    "dependsOn": {
-        "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "dbaeumer.vscode-eslint",
-                "Prettier.prettier-vscode"
-            ],
-            "settings": {
-                "editor.defaultFormatter": "prettier.prettier-vscode"
-            }
-        }
+  "id": "typescript",
+  "version": "0.2.0",
+  "name": "TypeScript",
+  "description": "",
+  "dependsOn": {
+    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "Prettier.prettier-vscode"],
+      "settings": {
+        "editor.defaultFormatter": "prettier.prettier-vscode"
+      }
     }
+  }
 }

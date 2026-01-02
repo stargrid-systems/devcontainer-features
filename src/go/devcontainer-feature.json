@@ -1,16 +1,14 @@
 {
-    "id": "go",
-    "version": "0.2.0",
-    "name": "Go",
-    "description": "",
-    "dependsOn": {
-        "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "golang.Go"
-            ]
-        }
+  "id": "go",
+  "version": "0.2.0",
+  "name": "Go",
+  "description": "",
+  "dependsOn": {
+    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.Go"]
     }
+  }
 }

@@ -1,16 +1,14 @@
 {
-    "id": "bash",
-    "version": "0.2.0",
-    "name": "Bash",
-    "description": "",
-    "dependsOn": {
-        "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "mads-hartmann.bash-ide-vscode"
-            ]
-        }
+  "id": "bash",
+  "version": "0.2.0",
+  "name": "Bash",
+  "description": "",
+  "dependsOn": {
+    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["mads-hartmann.bash-ide-vscode"]
     }
+  }
 }

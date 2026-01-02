@@ -1,16 +1,16 @@
 {
-    "id": "shell-history",
-    "version": "0.1.2",
-    "name": "Shell history",
-    "description": "Persist shell history across devcontainer rebuilds.",
-    "mounts": [
-        {
-            "source": "${devcontainerId}-shell-history",
-            "target": "/mnt/shell-history",
-            "type": "volume"
-        }
-    ],
-    "onCreateCommand": {
-        "shell-history": "/usr/local/share/devcontainers/shell-history/oncreate.sh"
+  "id": "shell-history",
+  "version": "0.1.2",
+  "name": "Shell history",
+  "description": "Persist shell history across devcontainer rebuilds.",
+  "mounts": [
+    {
+      "source": "${devcontainerId}-shell-history",
+      "target": "/mnt/shell-history",
+      "type": "volume"
     }
+  ],
+  "onCreateCommand": {
+    "shell-history": "/usr/local/share/devcontainers/shell-history/oncreate.sh"
+  }
 }
