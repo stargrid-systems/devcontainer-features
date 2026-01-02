@@ -26,6 +26,10 @@
       "package-name": "oras",
       "extra-files": ["devcontainer-feature.json"]
     },
+    "src/release-please": {
+      "package-name": "release-please",
+      "extra-files": ["devcontainer-feature.json"]
+    },
     "src/rust": {
       "package-name": "rust",
       "extra-files": ["devcontainer-feature.json"]
