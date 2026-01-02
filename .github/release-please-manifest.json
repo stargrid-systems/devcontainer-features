@@ -1,6 +1,6 @@
 {
   "src/avr-toolchain": "0.2.0",
-  "src/base": "1.0.0",
+  "src/base": "1.1.0",
   "src/bash": "0.2.0",
   "src/go": "0.2.0",
   "src/opentofu": "0.2.0",
