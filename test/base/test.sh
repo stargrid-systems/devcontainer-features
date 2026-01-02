@@ -9,5 +9,7 @@ check 'cargo-binstall is installed' cargo-binstall -V
 check 'library.sh is present' test -f /usr/local/share/devcontainers/base/library.sh
 check 'library.sh can be sourced' bash -c 'source /usr/local/share/devcontainers/base/library.sh'
 check 'git is installed' git --version
+check 'npm is installed' npm --version
+check 'curl is installed' curl --version
 
 reportResults
