@@ -1,11 +1,14 @@
 {
   "id": "base",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "name": "Base",
   "description": "Foundation for all other features.",
   "customizations": {
     "vscode": {
-      "extensions": ["eamodio.gitlens", "tamasfe.even-better-toml"]
+      "extensions": [
+        "eamodio.gitlens",
+        "tamasfe.even-better-toml"
+      ]
     }
   }
 }
