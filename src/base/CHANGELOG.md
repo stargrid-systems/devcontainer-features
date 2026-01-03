@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.1.0...base-v1.1.1) (2026-01-02)
+
+
+### Bug Fixes
+
+* run npm install as root instead of remote user ([abce724](https://github.com/stargrid-systems/devcontainer-features/commit/abce724b2de8a6b473d3a56cf222bde813a9684d))
+
 ## [1.1.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.0.0...base-v1.1.0) (2026-01-02)
 
 
