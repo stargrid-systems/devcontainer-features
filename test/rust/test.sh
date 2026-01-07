@@ -16,5 +16,6 @@ check 'cargo-shear is installed' cargo-shear --version
 check 'cargo-udeps is installed' cargo-udeps udeps --version
 check 'kani is installed' kani --version
 check 'release-plz is installed' release-plz --version
+check 'cargo-llvm-cov is installed' cargo llvm-cov --version
 
 reportResults

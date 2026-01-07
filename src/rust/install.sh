@@ -12,6 +12,8 @@ CARGO_ALL_FEATURES_VERSION=1.12.0
 CARGO_DEB_VERSION=3.6.2
 # renovate: datasource=github-releases depName=cargo-deny packageName=EmbarkStudios/cargo-deny
 CARGO_DENY_VERSION=0.18.9
+# renovate: datasource=github-releases depName=cargo-llvm-cov packageName=taiki-e/cargo-llvm-cov
+CARGO_LLVM_COV_VERSION=0.6.23
 # renovate: datasource=crate packageName=cargo-nextest versioning=semver
 CARGO_NEXTEST_VERSION=0.9.117
 # renovate: datasource=github-releases depName=cargo-semver-checks packageName=obi1kenobi/cargo-semver-checks
@@ -36,6 +38,7 @@ CARGO_BINSTALL_PACKAGES=(
     "cargo-all-features@${CARGO_ALL_FEATURES_VERSION}"
     "cargo-deb@${CARGO_DEB_VERSION}"
     "cargo-deny@${CARGO_DENY_VERSION}"
+    "cargo-llvm-cov@${CARGO_LLVM_COV_VERSION}"
     "cargo-nextest@${CARGO_NEXTEST_VERSION}"
     "cargo-semver-checks@${CARGO_SEMVER_CHECKS_VERSION}"
     "cargo-shear@${CARGO_SHEAR_VERSION}"

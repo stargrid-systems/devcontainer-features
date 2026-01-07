@@ -5,6 +5,7 @@ RUST_TOOLCHAIN=nightly-2025-12-27
 TARGETS=()
 COMPONENTS=(
     'clippy'
+    'llvm-tools-preview' # Required for 'cargo-llvm-cov'
     'miri'
     'rustfmt'
 )
