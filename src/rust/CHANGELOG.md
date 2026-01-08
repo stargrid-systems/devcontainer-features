@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/stargrid-systems/devcontainer-features/compare/rust-v0.2.0...rust-v0.3.0) (2026-01-08)
+
+
+### Features
+
+* add cargo-llvm-cov ([#42](https://github.com/stargrid-systems/devcontainer-features/issues/42)) ([9c4a0ca](https://github.com/stargrid-systems/devcontainer-features/commit/9c4a0ca59a99ea9306a27197337ecf31188e3eea))
+
 ## [0.2.0](https://github.com/stargrid-systems/devcontainer-features/compare/rust-v0.1.1...rust-v0.2.0) (2026-01-02)
 
 
