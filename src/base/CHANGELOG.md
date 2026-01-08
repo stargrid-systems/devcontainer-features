@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.1.1...base-v1.2.0) (2026-01-08)
+
+
+### Features
+
+* add uv to base feature ([#47](https://github.com/stargrid-systems/devcontainer-features/issues/47)) ([6beae58](https://github.com/stargrid-systems/devcontainer-features/commit/6beae5872ec1299401cf557bd06cccfe62e86b33))
+
 ## [1.1.1](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.1.0...base-v1.1.1) (2026-01-02)
 
 
