@@ -11,5 +11,7 @@ check 'library.sh can be sourced' bash -c 'source /usr/local/share/devcontainers
 check 'git is installed' git --version
 check 'npm is installed' npm --version
 check 'curl is installed' curl --version
+check 'uv is installed' uv --version
+check 'uvx is installed' uvx --version
 
 reportResults
