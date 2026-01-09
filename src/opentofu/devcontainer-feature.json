@@ -1,6 +1,6 @@
 {
   "id": "opentofu",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "name": "OpenTofu",
   "description": "",
   "dependsOn": {
@@ -8,7 +8,9 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["hashicorp.terraform"]
+      "extensions": [
+        "hashicorp.terraform"
+      ]
     }
   }
 }
