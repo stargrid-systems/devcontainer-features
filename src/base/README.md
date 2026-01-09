@@ -7,7 +7,7 @@ Foundation for all other features.
 
 ```json
 "features": {
-    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
+    "ghcr.io/stargrid-systems/devcontainer-features/base:2": {}
 }
 ```
 
