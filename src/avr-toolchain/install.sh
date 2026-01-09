@@ -20,9 +20,9 @@ CARGO_BINSTALL_PACKAGES=(
 )
 
 install_avrdude() {
+    local arch
     # One of Linux_32bit, Linux_64bit, Linux_ARMv6, Linux_ARM64
-    arch=$(dpkg --print-architecture)
-    case "${arch}" in
+    case "$(dpkg --print-architecture)" in
     'amd64') arch='Linux_64bit' ;;
     'armhf') arch='Linux_ARMv6' ;;
     'arm64') arch='Linux_ARM64' ;;
@@ -31,10 +31,10 @@ install_avrdude() {
         exit 1
         ;;
     esac
-    url="https://github.com/avrdudes/avrdude/releases/download/${AVRDUDE_VERSION}/avrdude_${AVRDUDE_VERSION}_${arch}.tar.gz"
-    curl -L -o /tmp/avrdude.tar.gz "${url}"
-    tar -xzf /tmp/avrdude.tar.gz -C /usr/local --strip-components=1
-    rm /tmp/avrdude.tar.gz
+    local archive_file='/tmp/avrdude.tar.gz'
+    curl -sSfL -o "${archive_file}" "https://github.com/avrdudes/avrdude/releases/download/${AVRDUDE_VERSION}/avrdude_${AVRDUDE_VERSION}_${arch}.tar.gz"
+    tar -xzf "${archive_file}" -C /usr/local --strip-components=1
+    rm "${archive_file}"
 }
 
 base__apt_install "${APT_PACKAGES[@]}"

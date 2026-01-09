@@ -14,20 +14,19 @@ APT_PACKAGES=(
 )
 
 install_golangci_lint() {
-    curl -sSfL https://golangci-lint.run/install.sh -o /tmp/install.sh
-    sh /tmp/install.sh -b /usr/local/bin "v${GOLANGCI_LINT_VERSION}"
-    rm /tmp/install.sh
+    local install_script='/tmp/install-golangci-lint.sh'
+    curl -sSfL -o "${install_script}" "https://raw.githubusercontent.com/golangci/golangci-lint/refs/tags/v${GOLANGCI_LINT_VERSION}/install.sh"
+    sh "${install_script}" -b /usr/local/bin "v${GOLANGCI_LINT_VERSION}"
+    rm "${install_script}"
 }
 
 install_goreleaser() {
     local arch # One of: amd64, armhf, i386, loong64, ppc64, riscv64
     arch=$(dpkg --print-architecture)
-    local url
-    url="https://github.com/goreleaser/goreleaser/releases/download/v${GORELEASER_VERSION}/goreleaser_${GORELEASER_VERSION}_${arch}.deb"
-
-    curl -sSL "$url" -o /tmp/goreleaser.deb
-    dpkg -i /tmp/goreleaser.deb
-    rm /tmp/goreleaser.deb
+    local deb_file='/tmp/goreleaser.deb'
+    curl -sSfL -o "${deb_file}" "https://github.com/goreleaser/goreleaser/releases/download/v${GORELEASER_VERSION}/goreleaser_${GORELEASER_VERSION}_${arch}.deb"
+    dpkg -i "${deb_file}"
+    rm "${deb_file}"
 }
 
 main() {
