@@ -19,18 +19,18 @@ APT_PACKAGES=(
 )
 
 install_cargo_binstall() {
+    local script_path='/tmp/cargo-binstall-install.sh'
+    curl -sSfL -o "${script_path}" "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/refs/tags/v${CARGO_BINSTALL_VERSION}/install-from-binstall-release.sh"
     declare -x BINSTALL_VERSION="${CARGO_BINSTALL_VERSION}"
     declare -x CARGO_HOME='/usr/local'
-    local script_path='/tmp/cargo-binstall-install.sh'
-    curl -LsSf -o "${script_path}" "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/refs/tags/v${CARGO_BINSTALL_VERSION}/install-from-binstall-release.sh"
     bash "${script_path}"
     rm "${script_path}"
 }
 
 install_uv() {
-    declare -x UV_INSTALL_DIR='/usr/local/bin'
     local script_path='/tmp/uv-install.sh'
-    curl -LsSf -o "${script_path}" "https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-installer.sh"
+    curl -sSfL -o "${script_path}" "https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-installer.sh"
+    declare -x UV_INSTALL_DIR='/usr/local/bin'
     sh "${script_path}" --no-modify-path
     rm "${script_path}"
 }
