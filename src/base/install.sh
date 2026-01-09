@@ -8,7 +8,6 @@ TARGET_SCRIPTS_DIR='/usr/local/share/devcontainers/base'
 
 # renovate: datasource=github-releases depName=cargo-binstall packageName=cargo-bins/cargo-binstall versioning=semver
 CARGO_BINSTALL_VERSION=1.16.6
-CARGO_BINSTALL_SCRIPT_SHA='375d3fe4abf5d50515f5bb8dddf2a6cacfe82eb3'
 # renovate: datasource=github-releases depName=uv packageName=astral-sh/uv versioning=semver
 UV_VERSION=0.9.22
 APT_PACKAGES=(
@@ -23,7 +22,7 @@ install_cargo_binstall() {
     declare -x BINSTALL_VERSION="${CARGO_BINSTALL_VERSION}"
     declare -x CARGO_HOME='/usr/local'
     local script_path='/tmp/cargo-binstall-install.sh'
-    curl -LsSf -o "${script_path}" "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/${CARGO_BINSTALL_SCRIPT_SHA}/install-from-binstall-release.sh"
+    curl -LsSf -o "${script_path}" "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/refs/tags/v${CARGO_BINSTALL_VERSION}/install-from-binstall-release.sh"
     bash "${script_path}"
     rm "${script_path}"
 }
