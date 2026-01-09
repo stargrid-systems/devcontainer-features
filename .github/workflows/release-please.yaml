@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
-      prs_created: ${{ steps.release.outputs.prs_created }}
-      prs: ${{ steps.release.outputs.prs }}
+      pr: ${{ steps.release.outputs.pr }}
+      paths_released: ${{ steps.release.outputs.paths_released }}
     steps:
       - name: Release Please
         id: release
@@ -28,18 +28,15 @@ jobs:
 
   update-pr-docs:
     needs: release-please
-    if: ${{ needs.release-please.outputs.prs_created == 'true' }}
+    if: ${{ needs.release-please.outputs.pr }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
-    strategy:
-      matrix:
-        pr: ${{ fromJSON(needs.release-please.outputs.prs) }}
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
         with:
-          ref: ${{ matrix.pr.headBranchName }}
+          ref: ${{ fromJSON(needs.release-please.outputs.pr).headBranchName }}
 
       - name: Generate Documentation
         uses: devcontainers/action@1082abd5d2bf3a11abccba70eef98df068277772 # v1
@@ -62,10 +59,10 @@ jobs:
           else
             git commit -m 'docs: automated documentation update'
             git push
-            echo "Documentation committed to PR #${{ matrix.pr.number }}"
+            echo "Documentation committed to PR #${{ fromJSON(needs.release-please.outputs.pr).number }}"
           fi
 
-  publish:
+  publish-features:
     needs: release-please
     if: ${{ needs.release-please.outputs.releases_created == 'true' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
@@ -84,3 +81,25 @@ jobs:
           generate-docs: "false"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  finalize-releases:
+    needs: [release-please, publish-features]
+    if: ${{ needs.release-please.outputs.releases_created == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      matrix:
+        path: ${{ fromJSON(needs.release-please.outputs.paths_released) }}
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+
+      - name: Mark Release as Ready
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          TAG_NAME="${{ needs.release-please.outputs[format('{0}--tag_name', matrix.path)] }}"
+          echo "Marking release $TAG_NAME as ready"
+          gh release edit "$TAG_NAME" --draft=false
+          echo "Release $TAG_NAME is now published"
