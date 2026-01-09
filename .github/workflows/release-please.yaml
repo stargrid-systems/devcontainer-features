@@ -88,18 +88,17 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    strategy:
-      matrix:
-        path: ${{ fromJSON(needs.release-please.outputs.paths_released) }}
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 
-      - name: Mark Release as Ready
+      - name: Mark Releases as Ready
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-          TAG_NAME="${{ needs.release-please.outputs[format('{0}--tag_name', matrix.path)] }}"
-          echo "Marking release $TAG_NAME as ready"
-          gh release edit "$TAG_NAME" --draft=false
-          echo "Release $TAG_NAME is now published"
+          echo "Marking all draft releases as ready"
+          gh release list --json tagName,isDraft --jq '.[] | select(.isDraft == true) | .tagName' | while read tag; do
+            echo "Publishing release: $tag"
+            gh release edit "$tag" --draft=false
+          done
+          echo "All releases published"
