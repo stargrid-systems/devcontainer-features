@@ -17,7 +17,7 @@ jobs:
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
       prs_created: ${{ steps.release.outputs.prs_created }}
-      pr: ${{ steps.release.outputs.pr }}
+      prs: ${{ steps.release.outputs.prs }}
     steps:
       - name: Release Please
         id: release
@@ -33,10 +33,13 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    strategy:
+      matrix:
+        pr: ${{ fromJSON(needs.release-please.outputs.prs) }}
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
         with:
-          ref: ${{ fromJSON(needs.release-please.outputs.pr).headBranchName }}
+          ref: ${{ matrix.pr.headBranchName }}
 
       - name: Generate Documentation
         uses: devcontainers/action@1082abd5d2bf3a11abccba70eef98df068277772 # v1
@@ -59,6 +62,7 @@ jobs:
           else
             git commit -m 'docs: automated documentation update [skip ci]'
             git push
+            echo "Documentation committed to PR #${{ matrix.pr.number }}"
           fi
 
   publish:
