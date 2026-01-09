@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.2.0...base-v1.3.0) (2026-01-09)
+
+
+### Features
+
+* add unzip to base feature ([#56](https://github.com/stargrid-systems/devcontainer-features/issues/56)) ([9a2b810](https://github.com/stargrid-systems/devcontainer-features/commit/9a2b81082fc945d0d04d04f8272c68cb68f303f9))
+
 ## [1.2.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.1.1...base-v1.2.0) (2026-01-08)
 
 
