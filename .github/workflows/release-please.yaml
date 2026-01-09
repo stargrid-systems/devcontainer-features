@@ -17,7 +17,6 @@ jobs:
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
       pr: ${{ steps.release.outputs.pr }}
-      paths_released: ${{ steps.release.outputs.paths_released }}
     steps:
       - name: Release Please
         id: release
@@ -82,23 +81,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  finalize-releases:
-    needs: [release-please, publish-features]
-    if: ${{ needs.release-please.outputs.releases_created == 'true' }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
-
-      - name: Mark Releases as Ready
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -e
-          echo "Marking all draft releases as ready"
-          gh release list --json tagName,isDraft --jq '.[] | select(.isDraft == true) | .tagName' | while read tag; do
-            echo "Publishing release: $tag"
-            gh release edit "$tag" --draft=false
-          done
-          echo "All releases published"
