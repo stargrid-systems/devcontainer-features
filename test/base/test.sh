@@ -13,5 +13,6 @@ check 'npm is installed' npm --version
 check 'curl is installed' curl --version
 check 'uv is installed' uv --version
 check 'uvx is installed' uvx --version
+check 'unzip is installed' unzip -v
 
 reportResults

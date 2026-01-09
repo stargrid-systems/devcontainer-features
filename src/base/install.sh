@@ -16,6 +16,7 @@ APT_PACKAGES=(
     'git'
     'npm'
     'sudo'
+    'unzip'
 )
 
 install_cargo_binstall() {
