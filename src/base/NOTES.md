@@ -5,4 +5,5 @@
 - `git`
 - `npm`
 - `sudo`
+- `unzip`
 - `uv`
