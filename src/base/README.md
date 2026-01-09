@@ -27,6 +27,7 @@ Foundation for all other features.
 - `git`
 - `npm`
 - `sudo`
+- `unzip`
 - `uv`
 
 
