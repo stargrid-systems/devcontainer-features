@@ -62,10 +62,12 @@ base__pick_architecture() {
     # Handle aliases
     case "$arch" in
         armel|armhf)
-            if base__contains_element "arm" "$@"; then
-                printf 'arm\n'
-                return 0
-            fi
+            for alias in "armv6" "armv7" "arm"; do
+                if base__contains_element "$alias" "$@"; then
+                    printf '%s\n' "$alias"
+                    return 0
+                fi
+            done
             ;;
         i386)
             if base__contains_element "386" "$@"; then

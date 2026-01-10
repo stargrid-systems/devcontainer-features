@@ -12,8 +12,8 @@ OPENTOFU_VERSION=1.11.2
 TERRAFORM_VERSION=1.14.3
 
 install_opentofu() {
-    local arch # One of: 386, amd64, arm, arm64
-    arch="$(dpkg --print-architecture)"
+    local arch
+    arch="$(base__pick_architecture 'amd64' 'arm' 'arm64' '386')"
     local deb_file='/tmp/opentofu.deb'
     curl -sSfL -o "${deb_file}" "https://github.com/opentofu/opentofu/releases/download/v${OPENTOFU_VERSION}/tofu_${OPENTOFU_VERSION}_${arch}.deb"
     dpkg -i "${deb_file}"
@@ -21,8 +21,8 @@ install_opentofu() {
 }
 
 install_terraform() {
-    local arch # One of: 386, amd64, arm, arm64
-    arch="$(dpkg --print-architecture | sed 's/i386/386/')"
+    local arch
+    arch="$(base__pick_architecture 'amd64' 'arm' 'arm64' '386')"
     local zip_file='/tmp/terraform.zip'
     curl -sSfL -o "${zip_file}" "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_${arch}.zip"
     unzip -q "${zip_file}" -d /usr/local/bin terraform
@@ -30,8 +30,8 @@ install_terraform() {
 }
 
 install_hcloud() {
-    local arch # One of: 386, amd64, armv6, armv7
-    arch="$(dpkg --print-architecture)"
+    local arch
+    arch="$(base__pick_architecture 'amd64' 'armv6' 'armv7' '386')"
     local archive_file='/tmp/hcloud.tar.gz'
     curl -sSfL -o "${archive_file}" "https://github.com/hetznercloud/cli/releases/download/v${HCLOUD_VERSION}/hcloud-linux-${arch}.tar.gz"
     tar -C /usr/local/bin -xzf "${archive_file}" hcloud

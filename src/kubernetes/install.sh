@@ -19,8 +19,8 @@ APT_PACKAGES=(
 )
 
 install_helm() {
-    local arch # One of: amd64, arm, arm64, 386, loong64, ppc64le, riscv64, s390x
-    arch="$(dpkg --print-architecture)"
+    local arch
+    arch="$(base__pick_architecture 'amd64' 'arm' 'arm64' '386' 'loong64' 'ppc64le' 'riscv64' 's390x')"
     local archive_file='/tmp/helm.tar.gz'
     curl -sSfL -o "${archive_file}" "https://get.helm.sh/helm-v${HELM_VERSION}-linux-${arch}.tar.gz"
     tar -xzf "${archive_file}" -C /usr/local/bin --strip-components=1 "linux-${arch}/helm"
@@ -31,8 +31,8 @@ install_helm() {
 }
 
 install_argocd() {
-    local arch # One of: amd64, arm64, ppc64le, s390x
-    arch="$(dpkg --print-architecture)"
+    local arch
+    arch="$(base__pick_architecture 'amd64' 'arm64' 'ppc64le' 's390x')"
     local binary='/tmp/argocd'
     curl -sSfL -o "${binary}" "https://github.com/argoproj/argo-cd/releases/download/v${ARGOCD_VERSION}/argocd-linux-${arch}"
     install -m 555 "${binary}" /usr/local/bin/argocd
@@ -53,8 +53,8 @@ install_dapr() {
 }
 
 install_talos() {
-    local arch # One of: amd64, arm64, armv7, riscv64
-    arch="$(dpkg --print-architecture)"
+    local arch
+    arch="$(base__pick_architecture 'amd64' 'arm64' 'armv7' 'riscv64')"
     local binary='/tmp/talos'
     curl -sSfL -o "${binary}" "https://github.com/siderolabs/talos/releases/download/v${TALOS_VERSION}/talosctl-linux-${arch}"
     install -m 555 "${binary}" /usr/local/bin/talosctl
@@ -65,18 +65,14 @@ install_talos() {
 }
 
 install_k9s() {
-    local arch # One of: amd64, arm, arm64, armv7, ppc64le, s390x
-    arch="$(dpkg --print-architecture)"
+    local arch
+    arch="$(base__pick_architecture 'amd64' 'arm' 'arm64' 'armv7' 'ppc64le' 's390x')"
     local deb_file='/tmp/k9s.deb'
     curl -sSfL -o "${deb_file}" "https://github.com/derailed/k9s/releases/download/v${K9S_VERSION}/k9s_linux_${arch}.deb"
     dpkg -i "${deb_file}"
     rm -f "${deb_file}"
 }
 
-# TODO: split dapr into its own feature
-
-# TODO: remove after next base feature release
-mkdir -p /usr/local/share/bash-completion/completions /usr/local/share/zsh/site-functions
 base__apt_install "${APT_PACKAGES[@]}"
 install_helm
 install_argocd
