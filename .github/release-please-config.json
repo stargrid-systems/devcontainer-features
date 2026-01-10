@@ -18,6 +18,10 @@
       "package-name": "go",
       "extra-files": ["devcontainer-feature.json"]
     },
+    "src/kubernetes": {
+      "package-name": "kubernetes",
+      "extra-files": ["devcontainer-feature.json"]
+    },
     "src/opentofu": {
       "package-name": "opentofu",
       "extra-files": ["devcontainer-feature.json"]
