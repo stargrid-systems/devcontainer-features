@@ -28,8 +28,6 @@ install_terraform() {
 }
 
 main() {
-    # TODO: remove after next base feature release
-    base__apt_install unzip
     install_opentofu
     install_terraform
 }
