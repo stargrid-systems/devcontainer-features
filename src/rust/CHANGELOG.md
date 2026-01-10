@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/stargrid-systems/devcontainer-features/compare/rust-v0.3.0...rust-v0.3.1) (2026-01-10)
+
+
+### Bug Fixes
+
+* use the new base__pick_architecture function ([#75](https://github.com/stargrid-systems/devcontainer-features/issues/75)) ([3f3052a](https://github.com/stargrid-systems/devcontainer-features/commit/3f3052a1ac84782c321b37f48bca4e12852e6d08))
+
 ## [0.3.0](https://github.com/stargrid-systems/devcontainer-features/compare/rust-v0.2.0...rust-v0.3.0) (2026-01-08)
 
 
