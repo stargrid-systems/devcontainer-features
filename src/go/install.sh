@@ -7,7 +7,7 @@ source /usr/local/share/devcontainers/base/library.sh
 # renovate: datasource=github-releases depName=golangci-lint packageName=golangci/golangci-lint versioning=semver
 GOLANGCI_LINT_VERSION=2.8.0
 # renovate: datasource=github-releases depName=goreleaser packageName=goreleaser/goreleaser versioning=semver
-GORELEASER_VERSION=2.13.2
+GORELEASER_VERSION=2.13.3
 
 APT_PACKAGES=(
     'golang'
