@@ -21,8 +21,8 @@ install_golangci_lint() {
 }
 
 install_goreleaser() {
-    local arch # One of: amd64, armhf, i386, loong64, ppc64, riscv64
-    arch=$(dpkg --print-architecture)
+    local arch
+    arch=$(base__pick_architecture 'amd64' 'armhf' 'i386' 'loong64' 'ppc64' 'riscv64')
     local deb_file='/tmp/goreleaser.deb'
     curl -sSfL -o "${deb_file}" "https://github.com/goreleaser/goreleaser/releases/download/v${GORELEASER_VERSION}/goreleaser_${GORELEASER_VERSION}_${arch}.deb"
     dpkg -i "${deb_file}"
