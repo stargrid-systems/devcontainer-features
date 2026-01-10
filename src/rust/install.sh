@@ -48,7 +48,6 @@ CARGO_BINSTALL_PACKAGES=(
 )
 
 base__apt_install "${APT_PACKAGES[@]}"
-# TODO: we should support passing a secret github token to cargo-binstall to avoid getting rate-limited
 base__cargo_binstall "${CARGO_BINSTALL_PACKAGES[@]}"
 
 sudo --user="${_REMOTE_USER}" ./install-remote-user.sh
