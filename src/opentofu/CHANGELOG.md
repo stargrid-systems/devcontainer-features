@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/stargrid-systems/devcontainer-features/compare/opentofu-v0.3.0...opentofu-v0.4.0) (2026-01-10)
+
+
+### Features
+
+* add hcloud to the opentofu feature ([#69](https://github.com/stargrid-systems/devcontainer-features/issues/69)) ([2ed1c4c](https://github.com/stargrid-systems/devcontainer-features/commit/2ed1c4c26aba983af982a641acb763c0c85a4f97))
+
 ## [0.3.0](https://github.com/stargrid-systems/devcontainer-features/compare/opentofu-v0.2.0...opentofu-v0.3.0) (2026-01-09)
 
 

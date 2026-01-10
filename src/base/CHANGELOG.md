@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.3.0...base-v1.4.0) (2026-01-10)
+
+
+### Features
+
+* add base__pick_architecture to base library ([#72](https://github.com/stargrid-systems/devcontainer-features/issues/72)) ([706f0ed](https://github.com/stargrid-systems/devcontainer-features/commit/706f0eddbea91763531938beca58747d5c5ba97f))
+* add kubernetes feature ([#67](https://github.com/stargrid-systems/devcontainer-features/issues/67)) ([814c29b](https://github.com/stargrid-systems/devcontainer-features/commit/814c29b0d13017d1ccf3b5ff1d5e1e59ac78bfaf))
+
 ## [1.3.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.2.0...base-v1.3.0) (2026-01-09)
 
 
