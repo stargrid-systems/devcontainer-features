@@ -42,6 +42,7 @@ install_scripts() {
 }
 
 main() {
+    mkdir -p '/usr/local/share/bash-completion/completions' '/usr/local/share/zsh/site-functions'
     install_scripts
     base__apt_install "${APT_PACKAGES[@]}"
     # Since we're likely the first feature to install apt packages, let's clean up the system while we're here

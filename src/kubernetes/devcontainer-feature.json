@@ -1,0 +1,17 @@
+{
+  "id": "kubernetes",
+  "version": "0.0.1",
+  "name": "Kubernetes",
+  "description": "",
+  "dependsOn": {
+    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-azuretools.vscode-dapr"
+      ]
+    }
+  }
+}
