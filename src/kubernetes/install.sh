@@ -20,7 +20,7 @@ APT_PACKAGES=(
 
 install_helm() {
     local arch # One of: amd64, arm, arm64, 386, loong64, ppc64le, riscv64, s390x
-    arch="$(dpkg --print-architecture | sed 's/i386/386/')"
+    arch="$(dpkg --print-architecture)"
     local archive_file='/tmp/helm.tar.gz'
     curl -sSfL -o "${archive_file}" "https://get.helm.sh/helm-v${HELM_VERSION}-linux-${arch}.tar.gz"
     tar -xzf "${archive_file}" -C /usr/local/bin --strip-components=1 "linux-${arch}/helm"
