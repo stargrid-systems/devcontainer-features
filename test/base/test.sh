@@ -15,4 +15,11 @@ check 'uv is installed' uv --version
 check 'uvx is installed' uvx --version
 check 'unzip is installed' unzip -v
 
+# Library tests
+# shellcheck source=/dev/null
+source /usr/local/share/devcontainers/base/library.sh
+check 'library: contains_element finds existing element' base__contains_element "apple" "banana" "orange" "apple"
+choice=$(OVERRIDE_ARCH=i386 base__pick_architecture amd64 386)
+check 'library: pick_architecture handles 386' test "$choice" = "386"
+
 reportResults

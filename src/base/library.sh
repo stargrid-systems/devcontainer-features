@@ -29,3 +29,51 @@ base__cargo_binstall() {
         --install-path "/usr/local/bin" \
         "$@" || return
 }
+
+# Usage: base__contains_element <element> <array...>
+#
+# Returns 0 if the element is found in the array, 1 otherwise.
+base__contains_element() {
+    local element match="$1"
+    shift
+    for element; do
+        if [ "$element" = "$match" ]; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+# Usage: base__pick_architecture <architecture...>
+#
+# Takes a list of architectures and prints the one matching the current system.
+# If none match, prints an error and returns a non-zero exit code.
+base__pick_architecture() {
+    # Debian supports: amd64, arm64, armel, armhf, i386, ppc64el, riscv64, s390x
+    local arch="${OVERRIDE_ARCH:-}"
+    if [ -z "$arch" ]; then
+        arch="$(dpkg --print-architecture)"
+    fi
+    # Direct match
+    if base__contains_element "$arch" "$@"; then
+        printf '%s\n' "$arch"
+        return 0
+    fi
+    # Handle aliases
+    case "$arch" in
+        armel|armhf)
+            if base__contains_element "arm" "$@"; then
+                printf 'arm\n'
+                return 0
+            fi
+            ;;
+        i386)
+            if base__contains_element "386" "$@"; then
+                printf '386\n'
+                return 0
+            fi
+            ;;
+    esac
+    printf >&2 'Error: Unsupported architecture: %s\n' "$arch" 
+    return 1
+}
