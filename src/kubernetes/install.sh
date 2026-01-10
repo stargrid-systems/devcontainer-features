@@ -5,15 +5,15 @@ set -euo pipefail
 source /usr/local/share/devcontainers/base/library.sh
 
 # renovate: datasource=github-releases depName=argocd packageName=argoproj/argo-cd versioning=semver
-ARGOCD_VERSION='3.0.21'
+ARGOCD_VERSION=3.0.21
 # renovate: datasource=github-releases depName=dapr-cli packageName=dapr/cli versioning=semver
-DAPR_VERSION='1.16.5'
+DAPR_VERSION=1.16.5
 # renovate: datasource=github-releases depName=helm packageName=helm/helm versioning=semver
-HELM_VERSION='4.0.4'
+HELM_VERSION=4.0.4
 # renovate: datasource=github-releases depName=k9s packageName=derailed/k9s versioning=semver
-K9s_VERSION='0.50.16'
+K9S_VERSION=0.50.16
 # renovate: datasource=github-releases depName=talos packageName=siderolabs/talos versioning=semver
-TALOS_VERSION='1.12.1'
+TALOS_VERSION=1.12.1
 APT_PACKAGES=(
     'kubectl'
 )
@@ -68,7 +68,7 @@ install_k9s() {
     local arch # One of: amd64, arm, arm64, armv7, ppc64le, s390x
     arch="$(dpkg --print-architecture)"
     local deb_file='/tmp/k9s.deb'
-    curl -sSfL -o "${deb_file}" "https://github.com/derailed/k9s/releases/download/v${K9s_VERSION}/k9s_linux_${arch}.deb"
+    curl -sSfL -o "${deb_file}" "https://github.com/derailed/k9s/releases/download/v${K9S_VERSION}/k9s_linux_${arch}.deb"
     dpkg -i "${deb_file}"
     rm -f "${deb_file}"
 }
