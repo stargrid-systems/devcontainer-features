@@ -75,7 +75,6 @@ install_k9s() {
 
 # TODO: split dapr into its own feature
 
-set -x
 # TODO: remove after next base feature release
 mkdir -p /usr/local/share/bash-completion/completions /usr/local/share/zsh/site-functions
 base__apt_install "${APT_PACKAGES[@]}"
