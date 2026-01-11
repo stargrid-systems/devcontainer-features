@@ -1,0 +1,9 @@
+{
+  "id": "sigstore",
+  "version": "0.0.1",
+  "name": "Sigstore",
+  "description": "",
+  "dependsOn": {
+    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
+  }
+}
