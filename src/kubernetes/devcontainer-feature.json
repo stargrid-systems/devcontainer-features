@@ -8,10 +8,7 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "ms-kubernetes-tools.vscode-kubernetes-tools",
-        "ms-azuretools.vscode-dapr"
-      ]
+      "extensions": ["ms-kubernetes-tools.vscode-kubernetes-tools"]
     }
   }
 }
