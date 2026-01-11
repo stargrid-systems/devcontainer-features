@@ -11,6 +11,7 @@ check 'hcloud is installed' hcloud version
 check 'packer is installed' packer --version
 check 'butane is installed' butane --version
 
+# Shell completions tests
 # butane doesn't have any autocomplete
 for bin in tofu terraform hcloud packer; do
     check "bash ${bin} autocomplete works" bash -c ". /usr/share/bash-completion/bash_completion && __load_completion ${bin} && complete -p ${bin}"

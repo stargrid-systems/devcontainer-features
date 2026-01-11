@@ -9,5 +9,6 @@
   "src/release-please": "1.0.0",
   "src/rust": "0.3.1",
   "src/shell-history": "0.1.2",
+  "src/sigstore": "0.0.1",
   "src/typescript": "0.2.0"
 }

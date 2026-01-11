@@ -1,0 +1,9 @@
+{
+  "id": "sigstore",
+  "version": "0.0.1",
+  "name": "Sigstore",
+  "description": "Installs Sigstore tooling (e.g. cosign and related CLIs) in the dev container for signing and verifying container images and other software artifacts.",
+  "dependsOn": {
+    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
+  }
+}
