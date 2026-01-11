@@ -11,6 +11,7 @@ CARGO_BINSTALL_VERSION=1.16.6
 # renovate: datasource=github-releases depName=uv packageName=astral-sh/uv versioning=semver
 UV_VERSION=0.9.24
 APT_PACKAGES=(
+    'bash-completion'
     'ca-certificates'
     'curl'
     'git'
