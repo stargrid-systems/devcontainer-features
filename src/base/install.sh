@@ -15,6 +15,7 @@ APT_PACKAGES=(
     'ca-certificates'
     'curl'
     'git'
+    'gpg'
     'npm'
     'sudo'
     'unzip'
