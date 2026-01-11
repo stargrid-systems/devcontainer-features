@@ -18,7 +18,6 @@
 ### VS Code Extensions
 
 - `ms-kubernetes-tools.vscode-kubernetes-tools`
-- `ms-azuretools.vscode-dapr`
 
 
 
