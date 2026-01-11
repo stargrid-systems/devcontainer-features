@@ -61,6 +61,22 @@ base__pick_architecture() {
     fi
     # Handle aliases
     case "$arch" in
+        amd64)
+            for alias in "x86_64" "x64"; do
+                if base__contains_element "$alias" "$@"; then
+                    printf '%s\n' "$alias"
+                    return 0
+                fi
+            done
+            ;;
+        arm64)
+            for alias in "aarch64"; do
+                if base__contains_element "$alias" "$@"; then
+                    printf '%s\n' "$alias"
+                    return 0
+                fi
+            done
+            ;;
         armel|armhf)
             for alias in "armv6" "armv7" "arm"; do
                 if base__contains_element "$alias" "$@"; then
