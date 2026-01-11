@@ -11,7 +11,7 @@ DAPR_VERSION=1.16.5
 # renovate: datasource=github-releases depName=helm packageName=helm/helm versioning=semver
 HELM_VERSION=4.0.4
 # renovate: datasource=github-releases depName=k9s packageName=derailed/k9s versioning=semver
-K9S_VERSION=0.50.17
+K9S_VERSION=0.50.18
 # renovate: datasource=github-releases depName=talos packageName=siderolabs/talos versioning=semver
 TALOS_VERSION=1.12.1
 APT_PACKAGES=(
