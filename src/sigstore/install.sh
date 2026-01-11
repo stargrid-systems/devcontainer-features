@@ -22,8 +22,8 @@ install_cosign() {
     dpkg -i "${deb_file}"
     # Now that cosign is installed, use it to verify its own package
     cosign verify-blob "${deb_file}" --bundle "${deb_file}.sigstore.json" \
-        --certificate-identity keyless@projectsigstore.iam.gserviceaccount.com \
-        --certificate-oidc-issuer https://accounts.google.com
+        --certificate-identity 'keyless@projectsigstore.iam.gserviceaccount.com' \
+        --certificate-oidc-issuer 'https://accounts.google.com'
     rm "${deb_file}" "${deb_file}.sigstore.json"
 
     cosign completion bash >/usr/local/share/bash-completion/completions/cosign
@@ -39,9 +39,9 @@ install_rekor_cli() {
     curl -sSfL -o "${binary}-keyless.sigstore.json" "${url}-keyless.sigstore.json"
     cosign verify-blob "${binary}" --bundle "${binary}-keyless.sigstore.json" \
         --certificate-identity 'keyless@projectsigstore.iam.gserviceaccount.com' \
-        --certificate-oidc-issuer https://accounts.google.com
+        --certificate-oidc-issuer 'https://accounts.google.com'
     install -m 755 "${binary}" /usr/local/bin/rekor-cli
-    rm -f "${binary}.sigstore.json" "${binary}"
+    rm -f "${binary}-keyless.sigstore.json" "${binary}"
 
     rekor-cli completion bash >/usr/local/share/bash-completion/completions/rekor-cli
     rekor-cli completion zsh >/usr/local/share/zsh/site-functions/_rekor-cli
@@ -56,7 +56,7 @@ install_gitsign() {
     dpkg -i "${deb_file}"
     # TODO: verify??
     rm "${deb_file}"
-    
+
     gitsign completion bash >/usr/local/share/bash-completion/completions/gitsign
     gitsign completion zsh >/usr/local/share/zsh/site-functions/_gitsign
 }
