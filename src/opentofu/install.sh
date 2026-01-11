@@ -4,6 +4,8 @@ set -euo pipefail
 # shellcheck source=../base/library.sh
 source /usr/local/share/devcontainers/base/library.sh
 
+# renovate: datasource=github-releases depName=butane packageName=coreos/butane versioning=semver
+BUTANE_VERSION=0.25.1
 # renovate: datasource=github-releases depName=hcloud packageName=hetznercloud/cli versioning=semver
 HCLOUD_VERSION=1.59.0
 # renovate: datasource=github-releases depName=opentofu packageName=opentofu/opentofu versioning=semver
@@ -69,6 +71,18 @@ install_hcloud() {
     hcloud completion zsh >/usr/local/share/zsh/site-functions/_hcloud
 }
 
+install_butane() {
+    local arch
+    arch="$(base__pick_architecture 'aarch64' 'ppc64le' 's390x' 'x86_64')"
+    local binary_file='/tmp/butane'
+    local binary_url="https://github.com/coreos/butane/releases/download/v${BUTANE_VERSION}/butane-${arch}-unknown-linux-gnu"
+    curl -sSfL -o "${binary_file}" "${binary_url}"
+    curl -sSfL -o "${binary_file}.asc" "${binary_url}.asc"
+    gpg --verify "${binary_file}.asc" "${binary_file}"
+    install -m 755 "${binary_file}" /usr/local/bin/butane
+    rm -f "${binary_file}" "${binary_file}.asc"
+}
+
 # TODO: remove after next release of base
 base__apt_install "bash-completion"
 
@@ -76,3 +90,4 @@ install_opentofu
 install_hashicorp_binary terraform "${TERRAFORM_VERSION}"
 install_hashicorp_binary packer "${PACKER_VERSION}"
 install_hcloud
+install_butane
