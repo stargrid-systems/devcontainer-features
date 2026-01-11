@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.5.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.4.1...base-v1.5.0) (2026-01-11)
+
+
+### Features
+
+* add butane ([#87](https://github.com/stargrid-systems/devcontainer-features/issues/87)) ([22d48d1](https://github.com/stargrid-systems/devcontainer-features/commit/22d48d1573d5000634651b80f6c3ef73a2eb8089))
+* add packer cli to opentofu feature and set up tab completions ([#83](https://github.com/stargrid-systems/devcontainer-features/issues/83)) ([ff4bca7](https://github.com/stargrid-systems/devcontainer-features/commit/ff4bca7c282a873e828c2c346f437f374b88472e))
+* set up shell completions for uv and uvx ([#85](https://github.com/stargrid-systems/devcontainer-features/issues/85)) ([0fd8002](https://github.com/stargrid-systems/devcontainer-features/commit/0fd8002cd6b2f9e9b9796cd35848298a7365fe6f))
+* support x86_64 and aarch64 for picking arch ([#86](https://github.com/stargrid-systems/devcontainer-features/issues/86)) ([17c6d16](https://github.com/stargrid-systems/devcontainer-features/commit/17c6d165fbc2ca9f2bac361e932d1902eed816af))
+
 ## [1.4.1](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.4.0...base-v1.4.1) (2026-01-10)
 
 
