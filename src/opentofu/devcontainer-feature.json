@@ -8,9 +8,7 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "hashicorp.terraform"
-      ]
+      "extensions": ["4ops.packer", "hashicorp.terraform"]
     }
   }
 }
