@@ -4,6 +4,8 @@ set -euo pipefail
 # shellcheck source=../base/library.sh
 source /usr/local/share/devcontainers/base/library.sh
 
+# renovate: datasource=github-releases depName=butane packageName=coreos/butane versioning=semver
+BUTANE_VERSION=0.25.1
 # renovate: datasource=github-releases depName=hcloud packageName=hetznercloud/cli versioning=semver
 HCLOUD_VERSION=1.59.0
 # renovate: datasource=github-releases depName=opentofu packageName=opentofu/opentofu versioning=semver
@@ -69,10 +71,79 @@ install_hcloud() {
     hcloud completion zsh >/usr/local/share/zsh/site-functions/_hcloud
 }
 
+# TODO: remove after next base release!
+# Usage: base__pick_architecture <architecture...>
+#
+# Takes a list of architectures and prints the one matching the current system.
+# If none match, prints an error and returns a non-zero exit code.
+base__pick_architecture() {
+    # Debian supports: amd64, arm64, armel, armhf, i386, ppc64el, riscv64, s390x
+    local arch="${OVERRIDE_ARCH:-}"
+    if [ -z "$arch" ]; then
+        arch="$(dpkg --print-architecture)"
+    fi
+    # Direct match
+    if base__contains_element "$arch" "$@"; then
+        printf '%s\n' "$arch"
+        return 0
+    fi
+    # Handle aliases
+    case "$arch" in
+        amd64)
+            for alias in "x86_64" "x64"; do
+                if base__contains_element "$alias" "$@"; then
+                    printf '%s\n' "$alias"
+                    return 0
+                fi
+            done
+            ;;
+        arm64)
+            for alias in "aarch64"; do
+                if base__contains_element "$alias" "$@"; then
+                    printf '%s\n' "$alias"
+                    return 0
+                fi
+            done
+            ;;
+        armel|armhf)
+            for alias in "armv6" "armv7" "arm"; do
+                if base__contains_element "$alias" "$@"; then
+                    printf '%s\n' "$alias"
+                    return 0
+                fi
+            done
+            ;;
+        i386)
+            if base__contains_element "386" "$@"; then
+                printf '386\n'
+                return 0
+            fi
+            ;;
+    esac
+    printf >&2 'Error: Unsupported architecture: %s\n' "$arch" 
+    return 1
+}
+
+install_butane() {
+    local public_key='/tmp/fedora.gpg'
+    curl -sSfL -o "${public_key}" 'https://fedoraproject.org/fedora.gpg'
+
+    local arch
+    arch="$(base__pick_architecture 'aarch64' 'ppc64le' 's390x' 'x86_64')"
+    local binary_file='/tmp/butane'
+    local binary_url="https://github.com/coreos/butane/releases/download/v${BUTANE_VERSION}/butane-${arch}-unknown-linux-gnu"
+    curl -sSfL -o "${binary_file}" "${binary_url}"
+    curl -sSfL -o "${binary_file}.asc" "${binary_url}.asc"
+    gpg --keyring "${public_key}" --verify "${binary_file}.asc" "${binary_file}"
+    install -m 755 "${binary_file}" /usr/local/bin/butane
+    rm -f "${binary_file}" "${binary_file}.asc" "${public_key}"
+}
+
 # TODO: remove after next release of base
-base__apt_install "bash-completion"
+base__apt_install "bash-completion" "gpg"
 
 install_opentofu
 install_hashicorp_binary terraform "${TERRAFORM_VERSION}"
 install_hashicorp_binary packer "${PACKER_VERSION}"
 install_hcloud
+install_butane
