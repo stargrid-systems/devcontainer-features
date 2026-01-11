@@ -1,0 +1,17 @@
+{
+  "id": "markdown",
+  "version": "0.0.1",
+  "name": "Markdown",
+  "description": "Installs Markdown tooling.",
+  "dependsOn": {
+    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  }
+}

@@ -17,6 +17,7 @@
 
 ### VS Code Extensions
 
+- `4ops.packer`
 - `hashicorp.terraform`
 
 

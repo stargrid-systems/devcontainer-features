@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/stargrid-systems/devcontainer-features/compare/kubernetes-v0.1.0...kubernetes-v0.2.0) (2026-01-11)
+
+
+### Features
+
+* **deps:** update dependency k9s to v0.50.17 ([#90](https://github.com/stargrid-systems/devcontainer-features/issues/90)) ([277786b](https://github.com/stargrid-systems/devcontainer-features/commit/277786b7cda2c2d054d760130799e5594317d0f7))
+
+
+### Bug Fixes
+
+* remove deprecated dapr vscode extension ([#88](https://github.com/stargrid-systems/devcontainer-features/issues/88)) ([fe60478](https://github.com/stargrid-systems/devcontainer-features/commit/fe6047821f2dbe2c601179b127b2467c5e8105ed))
+
 ## [0.1.0](https://github.com/stargrid-systems/devcontainer-features/compare/kubernetes-v0.0.1...kubernetes-v0.1.0) (2026-01-10)
 
 
