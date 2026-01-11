@@ -6,11 +6,11 @@ source /usr/local/share/devcontainers/base/library.sh
 
 # renovate: datasource=github-releases depName=cosign packageName=sigstore/cosign versioning=semver
 COSIGN_VERSION=3.0.4
+# renovate: datasource=github-releases depName=gitsign packageName=sigstore/gitsign versioning=semver
+GITSIGN_VERSION=0.13.0
 # renovate: datasource=github-releases depName=rekor-cli packageName=sigstore/rekor-cli versioning=semver
 REKOR_CLI_VERSION=1.4.3
 
-# TODO: tuf-client
-# TODO: gitsign
 
 install_cosign() {
     local arch
@@ -47,5 +47,20 @@ install_rekor_cli() {
     rekor-cli completion zsh >/usr/local/share/zsh/site-functions/_rekor-cli
 }
 
+install_gitsign() {
+    local arch
+    arch=$(base__pick_architecture 'amd64' 'arm64')
+    local deb_file='/tmp/gitsign.deb'
+    local url="https://github.com/sigstore/gitsign/releases/download/v${GITSIGN_VERSION}/gitsign_${GITSIGN_VERSION}_linux_${arch}.deb"
+    curl -sSfL -o "${deb_file}" "${url}"
+    dpkg -i "${deb_file}"
+    # TODO: verify??
+    rm "${deb_file}"
+    
+    gitsign completion bash >/usr/local/share/bash-completion/completions/gitsign
+    gitsign completion zsh >/usr/local/share/zsh/site-functions/_gitsign
+}
+
 install_cosign
 install_rekor_cli
+install_gitsign
