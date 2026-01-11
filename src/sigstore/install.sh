@@ -6,17 +6,46 @@ source /usr/local/share/devcontainers/base/library.sh
 
 # renovate: datasource=github-releases depName=cosign packageName=sigstore/cosign versioning=semver
 COSIGN_VERSION=3.0.4
+# renovate: datasource=github-releases depName=rekor-cli packageName=sigstore/rekor-cli versioning=semver
+REKOR_CLI_VERSION=1.4.3
+
+# TODO: tuf-client
+# TODO: gitsign
 
 install_cosign() {
     local arch
     arch=$(base__pick_architecture 'amd64' 'arm64' 'armhf' 'ppc64el' 'riscv64' 's390x')
     local deb_file='/tmp/cosign.deb'
-    curl -sSfL -o "${deb_file}" "https://github.com/sigstore/cosign/releases/download/v${COSIGN_VERSION}/cosign_${COSIGN_VERSION}_${arch}.deb"
+    local url="https://github.com/sigstore/cosign/releases/download/v${COSIGN_VERSION}/cosign_${COSIGN_VERSION}_${arch}.deb"
+    curl -sSfL -o "${deb_file}" "${url}"
+    curl -sSfL -o "${deb_file}.sigstore.json" "${url}.sigstore.json"
     dpkg -i "${deb_file}"
-    rm "${deb_file}"
+    # Now that cosign is installed, use it to verify its own package
+    cosign verify-blob "${deb_file}" --bundle "${deb_file}.sigstore.json" \
+        --certificate-identity keyless@projectsigstore.iam.gserviceaccount.com \
+        --certificate-oidc-issuer https://accounts.google.com
+    rm "${deb_file}" "${deb_file}.sigstore.json"
 
     cosign completion bash >/usr/local/share/bash-completion/completions/cosign
     cosign completion zsh >/usr/local/share/zsh/site-functions/_cosign
 }
 
+install_rekor_cli() {
+    local arch
+    arch=$(base__pick_architecture 'amd64' 'arm64' 'arm' 'ppc64le' 's390x')
+    local binary='/tmp/rekor-cli'
+    local url="https://github.com/sigstore/rekor/releases/download/v${REKOR_CLI_VERSION}/rekor-cli-linux-${arch}"
+    curl -sSfL -o "${binary}" "${url}"
+    curl -sSfL -o "${binary}-keyless.sigstore.json" "${url}-keyless.sigstore.json"
+    cosign verify-blob "${binary}" --bundle "${binary}-keyless.sigstore.json" \
+        --certificate-identity 'keyless@projectsigstore.iam.gserviceaccount.com' \
+        --certificate-oidc-issuer https://accounts.google.com
+    install -m 755 "${binary}" /usr/local/bin/rekor-cli
+    rm -f "${binary}.sigstore.json" "${binary}"
+
+    rekor-cli completion bash >/usr/local/share/bash-completion/completions/rekor-cli
+    rekor-cli completion zsh >/usr/local/share/zsh/site-functions/_rekor-cli
+}
+
 install_cosign
+install_rekor_cli
