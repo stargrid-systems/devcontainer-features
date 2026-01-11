@@ -1,6 +1,6 @@
 {
   "id": "base",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "name": "Base",
   "description": "Foundation for all other features.",
   "customizations": {
