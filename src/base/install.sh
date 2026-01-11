@@ -39,8 +39,8 @@ install_uv() {
     uv generate-shell-completion bash >/usr/local/share/bash-completion/completions/uv
     uv generate-shell-completion zsh >/usr/local/share/zsh/site-functions/_uv
 
-    uvx generate-shell-completion bash >/usr/local/share/bash-completion/completions/uvx
-    uvx generate-shell-completion zsh >/usr/local/share/zsh/site-functions/_uvx
+    uvx --generate-shell-completion bash >/usr/local/share/bash-completion/completions/uvx
+    uvx --generate-shell-completion zsh >/usr/local/share/zsh/site-functions/_uvx
 }
 
 install_scripts() {
