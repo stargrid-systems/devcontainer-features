@@ -22,4 +22,10 @@ check 'library: contains_element finds existing element' base__contains_element 
 choice=$(OVERRIDE_ARCH=i386 base__pick_architecture amd64 386)
 check 'library: pick_architecture handles 386' test "$choice" = "386"
 
+# Completion tests
+# cargo-binstall doesn't have completions
+for bin in uv uvx; do
+    check "bash ${bin} autocomplete works" bash -c ". /usr/share/bash-completion/bash_completion && __load_completion ${bin} && complete -p ${bin}"
+done
+
 reportResults
