@@ -5,7 +5,7 @@ set -euo pipefail
 source /usr/local/share/devcontainers/base/library.sh
 
 # renovate: datasource=github-releases depName=argocd packageName=argoproj/argo-cd versioning=semver
-ARGOCD_VERSION=3.2.3
+ARGOCD_VERSION=3.2.4
 # renovate: datasource=github-releases depName=dapr-cli packageName=dapr/cli versioning=semver
 DAPR_VERSION=1.16.5
 # renovate: datasource=github-releases depName=helm packageName=helm/helm versioning=semver
