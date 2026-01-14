@@ -9,7 +9,7 @@ TARGET_SCRIPTS_DIR='/usr/local/share/devcontainers/base'
 # renovate: datasource=github-releases depName=cargo-binstall packageName=cargo-bins/cargo-binstall versioning=semver
 CARGO_BINSTALL_VERSION=1.16.6
 # renovate: datasource=github-releases depName=uv packageName=astral-sh/uv versioning=semver
-UV_VERSION=0.9.24
+UV_VERSION=0.9.25
 APT_PACKAGES=(
     'bash-completion'
     'ca-certificates'
