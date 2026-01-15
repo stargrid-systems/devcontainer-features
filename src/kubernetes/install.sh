@@ -9,7 +9,7 @@ ARGOCD_VERSION=3.2.5
 # renovate: datasource=github-releases depName=dapr-cli packageName=dapr/cli versioning=semver
 DAPR_VERSION=1.16.5
 # renovate: datasource=github-releases depName=helm packageName=helm/helm versioning=semver
-HELM_VERSION=4.0.4
+HELM_VERSION=4.0.5
 # renovate: datasource=github-releases depName=k9s packageName=derailed/k9s versioning=semver
 K9S_VERSION=0.50.18
 # renovate: datasource=github-releases depName=talos packageName=siderolabs/talos versioning=semver
