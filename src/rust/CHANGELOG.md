@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/stargrid-systems/devcontainer-features/compare/rust-v0.3.1...rust-v0.4.0) (2026-01-17)
+
+
+### Features
+
+* **deps:** update dependency cargo-nextest to v0.9.121 ([#97](https://github.com/stargrid-systems/devcontainer-features/issues/97)) ([082d305](https://github.com/stargrid-systems/devcontainer-features/commit/082d30511c869fd31717e8408c1df0a064ab49ab))
+* **deps:** update dependency cargo-nextest to v0.9.122 ([#103](https://github.com/stargrid-systems/devcontainer-features/issues/103)) ([9f4e86a](https://github.com/stargrid-systems/devcontainer-features/commit/9f4e86a0dfdd2365492616ca2caf1f97d5224783))
+
 ## [0.3.1](https://github.com/stargrid-systems/devcontainer-features/compare/rust-v0.3.0...rust-v0.3.1) (2026-01-10)
 
 
