@@ -5,6 +5,9 @@ set -euo pipefail
 # Provides the 'check' and 'reportResults' commands.
 source dev-container-features-test-lib
 
-check 'shellhistory onCreate script configures HISTFILE for bash' grep 'export HISTFILE=/mnt/shell-history/.bash_history' "$HOME/.bashrc"
+# bash checks (use login shell to source .bashrc)
+check "configures HISTFILE for bash" bash -lxc "test \$HISTFILE = /mnt/shell-history/.bash_history"
+check "KUBECONFIG env variable is set" bash -lxc "test \$KUBECONFIG = /mnt/shell-history/config/kube/config.yaml"
+check "TALOSCONFIG env variable is set" bash -lxc "test \$TALOSCONFIG = /mnt/shell-history/config/talos/config.yaml"
 
 reportResults
