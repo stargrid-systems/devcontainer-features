@@ -114,16 +114,18 @@ install_cnpg() {
 }
 
 install_kubeseal() {
+    local work_dir='/tmp/kubeseal'
+    mkdir -p "${work_dir}"
     local arch
     arch="$(base__pick_architecture 'amd64' 'arm' 'arm64')"
-    local archive_file='/tmp/kubeseal.tar.gz'
+    local archive_file="${work_dir}/kubeseal.tar.gz"
     local url="https://github.com/bitnami-labs/sealed-secrets/releases/download/v${KUBESEAL_VERSION}/kubeseal-${KUBESEAL_VERSION}-linux-${arch}.tar.gz"
     curl -sSfL -o "${archive_file}" "${url}"
     curl -sSfL -o "${archive_file}.sig" "${url}.sig"
-    gpg --verify "${archive_file}.sig" "${archive_file}"
-    tar -xzf "${archive_file}" kubeseal -C /tmp
-    install -m 755 /tmp/kubeseal /usr/local/bin/kubeseal
-    rm "${archive_file}" "${archive_file}.sig" /tmp/kubeseal
+    cosign verify-blob "${archive_file}" --signature "${archive_file}.sig" --key https://raw.githubusercontent.com/bitnami-labs/sealed-secrets/946bc048f3407117c837da6e4300686522d4c4eb/.github/workflows/cosign.pub
+    tar -xzf "${archive_file}" -C "${work_dir}" kubeseal
+    install -m 755 "${work_dir}/kubeseal" /usr/local/bin/kubeseal
+    rm -rf "${work_dir}"
 }
 
 base__apt_install "${APT_PACKAGES[@]}"

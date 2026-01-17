@@ -4,7 +4,8 @@
   "name": "Kubernetes",
   "description": "",
   "dependsOn": {
-    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {}
+    "ghcr.io/stargrid-systems/devcontainer-features/base:1": {},
+    "ghcr.io/stargrid-systems/devcontainer-features/sigstore:0": {}
   },
   "customizations": {
     "vscode": {
