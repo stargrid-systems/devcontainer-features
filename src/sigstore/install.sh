@@ -11,7 +11,6 @@ GITSIGN_VERSION=0.13.0
 # renovate: datasource=github-releases depName=rekor-cli packageName=sigstore/rekor versioning=semver
 REKOR_CLI_VERSION=1.4.3
 
-
 install_cosign() {
     local arch
     arch=$(base__pick_architecture 'amd64' 'arm64' 'armhf' 'ppc64el' 'riscv64' 's390x')
