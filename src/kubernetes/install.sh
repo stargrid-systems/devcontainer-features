@@ -6,6 +6,8 @@ source /usr/local/share/devcontainers/base/library.sh
 
 # renovate: datasource=github-releases depName=argocd packageName=argoproj/argo-cd versioning=semver
 ARGOCD_VERSION=3.2.5
+# renovate: datasource=github-releases depName=cloudnative-pg packageName=cloudnative-pg/cloudnative-pg versioning=semver
+CNPG_VERSION=1.28.0
 # renovate: datasource=github-releases depName=dapr-cli packageName=dapr/cli versioning=semver
 DAPR_VERSION=1.16.5
 # renovate: datasource=github-releases depName=helm packageName=helm/helm versioning=semver
@@ -26,7 +28,7 @@ install_helm() {
     local archive_file='/tmp/helm.tar.gz'
     curl -sSfL -o "${archive_file}" "https://get.helm.sh/helm-v${HELM_VERSION}-linux-${arch}.tar.gz"
     tar -xzf "${archive_file}" -C /usr/local/bin --strip-components=1 "linux-${arch}/helm"
-    rm -f "${archive_file}"
+    rm "${archive_file}"
 
     helm completion bash >/usr/local/share/bash-completion/completions/helm
     helm completion zsh >/usr/local/share/zsh/site-functions/_helm
@@ -48,7 +50,7 @@ install_dapr() {
     local install_script='/tmp/install_dapr.sh'
     curl -sSfL -o "${install_script}" "https://raw.githubusercontent.com/dapr/cli/refs/tags/v${DAPR_VERSION}/install/install.sh"
     bash "${install_script}" "${DAPR_VERSION}"
-    rm -f "${install_script}"
+    rm "${install_script}"
 
     dapr completion bash >/usr/local/share/bash-completion/completions/dapr
     dapr completion zsh >/usr/local/share/zsh/site-functions/_dapr
@@ -72,7 +74,7 @@ install_k9s() {
     local deb_file='/tmp/k9s.deb'
     curl -sSfL -o "${deb_file}" "https://github.com/derailed/k9s/releases/download/v${K9S_VERSION}/k9s_linux_${arch}.deb"
     dpkg -i "${deb_file}"
-    rm -f "${deb_file}"
+    rm "${deb_file}"
 }
 
 # krew unfortunately uses the same flawed ideology as brew where you can't
@@ -92,6 +94,23 @@ install_krew() {
     rm "${archive_file}" "/tmp/${bin_name}"
 }
 
+install_cnpg() {
+    # Manually download the public key like this because we don't want to install the full gpg suite.
+    local keyring_file='/tmp/cnpg_gpg.gpg'
+    curl -sSfL -o "${keyring_file}.asc" 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x0950e76b93bc38d112b090f407bdb5f9e33e0d6d'
+    gpg --dearmor -o "${keyring_file}" "${keyring_file}.asc"
+
+    local arch
+    arch="$(base__pick_architecture 'arm64' 'ppc64le' 's390x' 'x86_64')"
+    local deb_file='/tmp/kubectl-cnpg.deb'
+    local url="https://github.com/cloudnative-pg/cloudnative-pg/releases/download/v${CNPG_VERSION}/kubectl-cnpg_${CNPG_VERSION}_linux_${arch}.deb"
+    curl -sSfL -o "${deb_file}" "${url}"
+    curl -sSfL -o "${deb_file}.sig" "${url}.sig"
+    gpg --keyring "${keyring_file}" --verify "${deb_file}.sig" "${deb_file}"
+    dpkg -i "${deb_file}"
+    rm "${deb_file}" "${deb_file}.sig" "${keyring_file}" "${keyring_file}.asc"
+}
+
 base__apt_install "${APT_PACKAGES[@]}"
 install_helm
 install_argocd
@@ -99,3 +118,4 @@ install_dapr
 install_talos
 install_k9s
 install_krew
+install_cnpg
