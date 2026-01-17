@@ -12,5 +12,6 @@ check 'dapr is installed' dapr version
 check 'talosctl is installed' talosctl version --client
 check 'k9s is installed' k9s version
 check 'krew is installed' kubectl krew version
+check 'kubectl-cnpg is installed' kubectl cnpg version
 
 reportResults
