@@ -1,6 +1,6 @@
 {
   "id": "opentofu",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "name": "OpenTofu",
   "description": "",
   "dependsOn": {

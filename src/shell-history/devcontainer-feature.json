@@ -1,6 +1,6 @@
 {
   "id": "shell-history",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "name": "Shell history",
   "description": "Persist shell history across devcontainer rebuilds.",
   "mounts": [

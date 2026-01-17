@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0](https://github.com/stargrid-systems/devcontainer-features/compare/opentofu-v0.5.0...opentofu-v0.6.0) (2026-01-17)
+
+
+### Features
+
+* **deps:** update dependency hcloud to v1.60.0 ([#107](https://github.com/stargrid-systems/devcontainer-features/issues/107)) ([e32571b](https://github.com/stargrid-systems/devcontainer-features/commit/e32571b690a58b712bc52237ba24e174fe9dd44e))
+* **deps:** update dependency opentofu to v1.11.3 ([#99](https://github.com/stargrid-systems/devcontainer-features/issues/99)) ([024f0ba](https://github.com/stargrid-systems/devcontainer-features/commit/024f0ba786dda56ebf025eeb7969b783c5559a7d))
+
 ## [0.5.0](https://github.com/stargrid-systems/devcontainer-features/compare/opentofu-v0.4.1...opentofu-v0.5.0) (2026-01-11)
 
 
