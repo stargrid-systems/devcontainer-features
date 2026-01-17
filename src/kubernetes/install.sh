@@ -95,15 +95,20 @@ install_krew() {
 }
 
 install_cnpg() {
+    # Manually download the public key like this because we don't want to install the full gpg suite.
+    local keyring_file='/tmp/cnpg_gpg.gpg'
+    curl -sSfL -o "${keyring_file}.asc" 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x0950e76b93bc38d112b090f407bdb5f9e33e0d6d'
+    gpg --dearmor -o "${keyring_file}" "${keyring_file}.asc"
+
     local arch
     arch="$(base__pick_architecture 'arm64' 'ppc64le' 's390x' 'x86_64')"
     local deb_file='/tmp/kubectl-cnpg.deb'
     local url="https://github.com/cloudnative-pg/cloudnative-pg/releases/download/v${CNPG_VERSION}/kubectl-cnpg_${CNPG_VERSION}_linux_${arch}.deb"
     curl -sSfL -o "${deb_file}" "${url}"
     curl -sSfL -o "${deb_file}.sig" "${url}.sig"
-    # TODO: verify signature
+    gpg --keyring "${keyring_file}" --verify "${deb_file}.sig" "${deb_file}"
     dpkg -i "${deb_file}"
-    rm "${deb_file}" "${deb_file}.sig"
+    rm "${deb_file}" "${deb_file}.sig" "${keyring_file}" "${keyring_file}.asc"
 }
 
 base__apt_install "${APT_PACKAGES[@]}"
