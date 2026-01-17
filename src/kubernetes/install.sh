@@ -103,7 +103,7 @@ install_cnpg() {
     curl -sSfL -o "${deb_file}.sig" "${url}.sig"
     # TODO: verify signature
     dpkg -i "${deb_file}"
-    rm "${deb_file}" "${deb_file}.sig" /tmp/keyring.gpg
+    rm "${deb_file}" "${deb_file}.sig"
 }
 
 base__apt_install "${APT_PACKAGES[@]}"
