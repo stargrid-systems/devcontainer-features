@@ -16,6 +16,8 @@ HELM_VERSION=4.0.5
 K9S_VERSION=0.50.18
 # renovate: datasource=github-releases depName=krew packageName=kubernetes-sigs/krew versioning=semver
 KREW_VERSION=0.4.5
+# renovate: datasource=github-releases depName=kubeseal packageName=bitnami-labs/sealed-secrets versioning=semver
+KUBESEAL_VERSION=0.34.0
 # renovate: datasource=github-releases depName=talos packageName=siderolabs/talos versioning=semver
 TALOS_VERSION=1.12.1
 APT_PACKAGES=(
@@ -111,6 +113,19 @@ install_cnpg() {
     rm "${deb_file}" "${deb_file}.sig" "${keyring_file}" "${keyring_file}.asc"
 }
 
+install_kubeseal() {
+    local arch
+    arch="$(base__pick_architecture 'amd64' 'arm' 'arm64')"
+    local archive_file='/tmp/kubeseal.tar.gz'
+    local url="https://github.com/bitnami-labs/sealed-secrets/releases/download/v${KUBESEAL_VERSION}/kubeseal-${KUBESEAL_VERSION}-linux-${arch}.tar.gz"
+    curl -sSfL -o "${archive_file}" "${url}"
+    curl -sSfL -o "${archive_file}.sig" "${url}.sig"
+    gpg --verify "${archive_file}.sig" "${archive_file}"
+    tar -xzf "${archive_file}" kubeseal -C /tmp
+    install -m 755 /tmp/kubeseal /usr/local/bin/kubeseal
+    rm "${archive_file}" "${archive_file}.sig" /tmp/kubeseal
+}
+
 base__apt_install "${APT_PACKAGES[@]}"
 install_helm
 install_argocd
@@ -119,3 +134,4 @@ install_talos
 install_k9s
 install_krew
 install_cnpg
+install_kubeseal
