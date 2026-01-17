@@ -16,6 +16,8 @@ HELM_VERSION=4.0.5
 K9S_VERSION=0.50.18
 # renovate: datasource=github-releases depName=krew packageName=kubernetes-sigs/krew versioning=semver
 KREW_VERSION=0.4.5
+# renovate: datasource=github-releases depName=kubeseal packageName=bitnami-labs/sealed-secrets versioning=semver
+KUBESEAL_VERSION=0.34.0
 # renovate: datasource=github-releases depName=talos packageName=siderolabs/talos versioning=semver
 TALOS_VERSION=1.12.1
 APT_PACKAGES=(
@@ -111,6 +113,21 @@ install_cnpg() {
     rm "${deb_file}" "${deb_file}.sig" "${keyring_file}" "${keyring_file}.asc"
 }
 
+install_kubeseal() {
+    local work_dir='/tmp/kubeseal'
+    mkdir -p "${work_dir}"
+    local arch
+    arch="$(base__pick_architecture 'amd64' 'arm' 'arm64')"
+    local archive_file="${work_dir}/kubeseal.tar.gz"
+    local url="https://github.com/bitnami-labs/sealed-secrets/releases/download/v${KUBESEAL_VERSION}/kubeseal-${KUBESEAL_VERSION}-linux-${arch}.tar.gz"
+    curl -sSfL -o "${archive_file}" "${url}"
+    curl -sSfL -o "${archive_file}.sig" "${url}.sig"
+    cosign verify-blob "${archive_file}" --signature "${archive_file}.sig" --key https://raw.githubusercontent.com/bitnami-labs/sealed-secrets/946bc048f3407117c837da6e4300686522d4c4eb/.github/workflows/cosign.pub
+    tar -xzf "${archive_file}" -C "${work_dir}" kubeseal
+    install -m 755 "${work_dir}/kubeseal" /usr/local/bin/kubeseal
+    rm -rf "${work_dir}"
+}
+
 base__apt_install "${APT_PACKAGES[@]}"
 install_helm
 install_argocd
@@ -119,3 +136,4 @@ install_talos
 install_k9s
 install_krew
 install_cnpg
+install_kubeseal
