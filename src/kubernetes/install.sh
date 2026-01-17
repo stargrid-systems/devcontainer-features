@@ -12,6 +12,8 @@ DAPR_VERSION=1.16.5
 HELM_VERSION=4.0.5
 # renovate: datasource=github-releases depName=k9s packageName=derailed/k9s versioning=semver
 K9S_VERSION=0.50.18
+# renovate: datasource=github-releases depName=krew packageName=kubernetes-sigs/krew versioning=semver
+KREW_VERSION=0.4.5
 # renovate: datasource=github-releases depName=talos packageName=siderolabs/talos versioning=semver
 TALOS_VERSION=1.12.1
 APT_PACKAGES=(
@@ -73,9 +75,27 @@ install_k9s() {
     rm -f "${deb_file}"
 }
 
+# krew unfortunately uses the same flawed ideology as brew where you can't
+# install specific versions of a tool. This means we don't actually want to use
+# krew to install any plugins for the devcontainer. We only install krew for
+# the user to allow for easy plugin installation later.
+# For the same reason we also don't let krew self-host.
+# See: <https://github.com/kubernetes-sigs/krew/issues/343>
+install_krew() {
+    local arch
+    arch="$(base__pick_architecture 'amd64' 'arm' 'arm64' 'ppc64le')"
+    local archive_file='/tmp/krew.tar.gz'
+    local bin_name="krew-linux_${arch}"
+    curl -sSfL -o "${archive_file}" "https://github.com/kubernetes-sigs/krew/releases/download/v${KREW_VERSION}/${bin_name}.tar.gz"
+    tar -xzf "${archive_file}" -C /tmp "./${bin_name}"
+    install -m 555 "/tmp/${bin_name}" /usr/local/bin/kubectl-krew
+    rm "${archive_file}" "/tmp/${bin_name}"
+}
+
 base__apt_install "${APT_PACKAGES[@]}"
 install_helm
 install_argocd
 install_dapr
 install_talos
 install_k9s
+install_krew

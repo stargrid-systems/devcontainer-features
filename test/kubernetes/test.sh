@@ -11,5 +11,6 @@ check 'argocd is installed' argocd version --client
 check 'dapr is installed' dapr version
 check 'talosctl is installed' talosctl version --client
 check 'k9s is installed' k9s version
+check 'krew is installed' kubectl krew version
 
 reportResults
