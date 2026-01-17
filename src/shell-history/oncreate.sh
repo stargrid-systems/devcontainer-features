@@ -10,27 +10,37 @@ chown_to_user() {
     fi
 }
 
-configure_histfile() {
-    # Set HISTFILE for bash
-    cat <<EOF >>"$HOME/.bashrc"
+print_common_shell_config() {
+    cat <<EOF
+export PROMPT_COMMAND='history -a'
+
+export KUBECONFIG='${HISTORY_MOUNT_DIR}/config/kube/config.yaml'
+export TALOSCONFIG='${HISTORY_MOUNT_DIR}/config/talos/config.yaml'
+EOF
+}
+
+print_bash_config() {
+    cat <<EOF
 if [[ -z "\$HISTFILE_OLD" ]]; then
     export HISTFILE_OLD=\$HISTFILE
 fi
-export HISTFILE=${HISTORY_MOUNT_DIR}/.bash_history
-export PROMPT_COMMAND='history -a'
+export HISTFILE='${HISTORY_MOUNT_DIR}/.bash_history'
 EOF
-
-    # Set HISTFILE for zsh
-    cat <<EOF >>"$HOME/.zshrc"
-export HISTFILE=${HISTORY_MOUNT_DIR}/.zsh_history
-export PROMPT_COMMAND='history -a'
-EOF
+    print_common_shell_config
 }
 
-main() {
-    configure_histfile
-    chown_to_user "${HISTORY_MOUNT_DIR}"
-
+print_zsh_config() {
+    cat <<EOF
+export HISTFILE='${HISTORY_MOUNT_DIR}/.zsh_history'
+EOF
+    print_common_shell_config
 }
 
-main "$@"
+apply_shell_config() {
+    print_bash_config >>"$HOME/.bashrc"
+    print_zsh_config >>"$HOME/.zshrc"
+}
+
+apply_shell_config
+chown_to_user "${HISTORY_MOUNT_DIR}"
+mkdir -p "${HISTORY_MOUNT_DIR}/config/kube" "${HISTORY_MOUNT_DIR}/config/talos"
