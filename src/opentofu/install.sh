@@ -5,7 +5,7 @@ set -euo pipefail
 source /usr/local/share/devcontainers/base/library.sh
 
 # renovate: datasource=github-releases depName=butane packageName=coreos/butane versioning=semver
-BUTANE_VERSION=0.25.1
+BUTANE_VERSION=0.26.0
 # renovate: datasource=github-releases depName=hcloud packageName=hetznercloud/cli versioning=semver
 HCLOUD_VERSION=1.60.0
 # renovate: datasource=github-releases depName=opentofu packageName=opentofu/opentofu versioning=semver
