@@ -19,7 +19,7 @@ KREW_VERSION=0.4.5
 # renovate: datasource=github-releases depName=kubeseal packageName=bitnami-labs/sealed-secrets versioning=semver
 KUBESEAL_VERSION=0.34.0
 # renovate: datasource=github-releases depName=talos packageName=siderolabs/talos versioning=semver
-TALOS_VERSION=1.12.1
+TALOS_VERSION=1.12.2
 APT_PACKAGES=(
     'kubectl'
 )
