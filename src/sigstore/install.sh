@@ -9,7 +9,7 @@ COSIGN_VERSION=3.0.4
 # renovate: datasource=github-releases depName=gitsign packageName=sigstore/gitsign versioning=semver
 GITSIGN_VERSION=0.13.0
 # renovate: datasource=github-releases depName=rekor-cli packageName=sigstore/rekor versioning=semver
-REKOR_CLI_VERSION=1.4.3
+REKOR_CLI_VERSION=1.5.0
 
 install_cosign() {
     local arch
