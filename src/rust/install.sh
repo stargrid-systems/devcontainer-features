@@ -17,7 +17,7 @@ CARGO_LLVM_COV_VERSION=0.6.23
 # renovate: datasource=crate packageName=cargo-nextest versioning=semver
 CARGO_NEXTEST_VERSION=0.9.122
 # renovate: datasource=github-releases depName=cargo-semver-checks packageName=obi1kenobi/cargo-semver-checks
-CARGO_SEMVER_CHECKS_VERSION=0.45.0
+CARGO_SEMVER_CHECKS_VERSION=0.46.0
 # renovate: datasource=github-releases depName=cargo-shear packageName=Boshen/cargo-shear
 CARGO_SHEAR_VERSION=1.9.1
 # renovate: datasource=github-releases depName=cargo-udeps packageName=est31/cargo-udeps
