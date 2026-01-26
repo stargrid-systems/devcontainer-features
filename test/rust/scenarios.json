@@ -1,0 +1,16 @@
+{
+    "custom_user": {
+        "image": "docker.io/debian:trixie-20251208",
+        "remoteUser": "dev",
+        "features": {
+            "ghcr.io/devcontainers/features/common-utils:2.5.6": {
+                "installZsh": false,
+                "configureZshAsDefaultShell": false,
+                "installOhMyZsh": false,
+                "installOhMyZshConfig": false,
+                "upgradePackages": false
+            },
+            "rust": {}
+        }
+    }
+}
