@@ -11,5 +11,5 @@
   "src/rust": "0.5.0",
   "src/shell-history": "0.2.0",
   "src/sigstore": "0.0.1",
-  "src/typescript": "0.2.0"
+  "src/typescript": "0.2.1"
 }

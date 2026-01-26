@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/stargrid-systems/devcontainer-features/compare/typescript-v0.2.0...typescript-v0.2.1) (2026-01-26)
+
+
+### Bug Fixes
+
+* migrate back to esbenp.prettier-vscode ([#129](https://github.com/stargrid-systems/devcontainer-features/issues/129)) ([ac3cff3](https://github.com/stargrid-systems/devcontainer-features/commit/ac3cff3cde2b3303c3fde8c16d98ab55db407332))
+
 ## [0.2.0](https://github.com/stargrid-systems/devcontainer-features/compare/typescript-v0.1.1...typescript-v0.2.0) (2026-01-02)
 
 

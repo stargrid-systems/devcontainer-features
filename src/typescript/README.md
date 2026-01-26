@@ -18,7 +18,7 @@
 ### VS Code Extensions
 
 - `dbaeumer.vscode-eslint`
-- `Prettier.prettier-vscode`
+- `esbenp.prettier-vscode`
 
 
 
