@@ -14,7 +14,6 @@
 
 ### Features
 
-* **deps:** update dependency argocd to v3.2.4 ([#98](https://github.com/stargrid-systems/devcontainer-features/issues/98)) ([089ae56](https://github.com/stargrid-systems/devcontainer-features/commit/089ae5655096440740df37a8606f6fb4a5356ca5))
 * **deps:** update dependency argocd to v3.2.5 ([#102](https://github.com/stargrid-systems/devcontainer-features/issues/102)) ([a6b6d83](https://github.com/stargrid-systems/devcontainer-features/commit/a6b6d83e530b7bf8bddaca8fc9c4f22ad2d4a3f4))
 * **deps:** update dependency helm to v4.0.5 ([#105](https://github.com/stargrid-systems/devcontainer-features/issues/105)) ([2d244a4](https://github.com/stargrid-systems/devcontainer-features/commit/2d244a4666c3a2f0b9e45e6c333a029751d0eecc))
 * **deps:** update dependency k9s to v0.50.18 ([#95](https://github.com/stargrid-systems/devcontainer-features/issues/95)) ([7c7e7b3](https://github.com/stargrid-systems/devcontainer-features/commit/7c7e7b3a7aa5a23931f884213717ffaa894489fe))
