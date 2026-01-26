@@ -9,7 +9,7 @@ BUTANE_VERSION=0.26.0
 # renovate: datasource=github-releases depName=hcloud packageName=hetznercloud/cli versioning=semver
 HCLOUD_VERSION=1.61.0
 # renovate: datasource=github-releases depName=opentofu packageName=opentofu/opentofu versioning=semver
-OPENTOFU_VERSION=1.11.3
+OPENTOFU_VERSION=1.11.4
 # renovate: datasource=github-releases depName=packer packageName=hashicorp/packer versioning=semver
 PACKER_VERSION=1.14.3
 # renovate: datasource=github-releases depName=terraform packageName=hashicorp/terraform versioning=semver
