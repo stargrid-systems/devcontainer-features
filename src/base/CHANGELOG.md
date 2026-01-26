@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.6.0...base-v1.7.0) (2026-01-26)
+
+
+### Features
+
+* **deps:** update dependency cargo-binstall to v1.17.3 ([#116](https://github.com/stargrid-systems/devcontainer-features/issues/116)) ([2133db7](https://github.com/stargrid-systems/devcontainer-features/commit/2133db73d5ae758500b72d4bd22a9033830dad44))
+
 ## [1.6.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.5.0...base-v1.6.0) (2026-01-17)
 
 

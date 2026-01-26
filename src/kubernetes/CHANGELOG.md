@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.0](https://github.com/stargrid-systems/devcontainer-features/compare/kubernetes-v0.3.0...kubernetes-v0.4.0) (2026-01-26)
+
+
+### Features
+
+* **deps:** update dependency argocd to v3.2.6 ([#122](https://github.com/stargrid-systems/devcontainer-features/issues/122)) ([15afa11](https://github.com/stargrid-systems/devcontainer-features/commit/15afa1176eea6ceaa72d40da2ba6eb9004031f5d))
+* **deps:** update dependency helm to v4.1.0 ([#119](https://github.com/stargrid-systems/devcontainer-features/issues/119)) ([169d8f6](https://github.com/stargrid-systems/devcontainer-features/commit/169d8f61171f458293ac9cd1fec4d840df133307))
+* **deps:** update dependency talos to v1.12.2 ([#121](https://github.com/stargrid-systems/devcontainer-features/issues/121)) ([d9b1cb6](https://github.com/stargrid-systems/devcontainer-features/commit/d9b1cb62236cc735addf9d449b1fc6af910aec16))
+
 ## [0.3.0](https://github.com/stargrid-systems/devcontainer-features/compare/kubernetes-v0.2.0...kubernetes-v0.3.0) (2026-01-17)
 
 

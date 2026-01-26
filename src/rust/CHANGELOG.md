@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.5.0](https://github.com/stargrid-systems/devcontainer-features/compare/rust-v0.4.0...rust-v0.5.0) (2026-01-26)
+
+
+### Features
+
+* **deps:** update dependency cargo-llvm-cov to v0.8.1 ([#123](https://github.com/stargrid-systems/devcontainer-features/issues/123)) ([49f11fc](https://github.com/stargrid-systems/devcontainer-features/commit/49f11fc4ccb96dcb724062ab08746be1fcca76fa))
+* **deps:** update dependency cargo-nextest to v0.9.124 ([#126](https://github.com/stargrid-systems/devcontainer-features/issues/126)) ([4660c4e](https://github.com/stargrid-systems/devcontainer-features/commit/4660c4e8766aa16ccd083b2ce118e8b09ccf73b0))
+* **deps:** update dependency cargo-semver-checks to v0.46.0 ([#124](https://github.com/stargrid-systems/devcontainer-features/issues/124)) ([fef0be6](https://github.com/stargrid-systems/devcontainer-features/commit/fef0be6a801697c4ccbe68f85b25de4788d2e6a2))
+* **deps:** update dependency release-plz to v0.3.151 ([#114](https://github.com/stargrid-systems/devcontainer-features/issues/114)) ([b58fad8](https://github.com/stargrid-systems/devcontainer-features/commit/b58fad81e29816f69486207ca04ca03da751943d))
+* **deps:** update dependency release-plz to v0.3.153 ([#127](https://github.com/stargrid-systems/devcontainer-features/issues/127)) ([4259434](https://github.com/stargrid-systems/devcontainer-features/commit/42594343a6358da64f40099cf09048584808e33a))
+
 ## [0.4.0](https://github.com/stargrid-systems/devcontainer-features/compare/rust-v0.3.1...rust-v0.4.0) (2026-01-17)
 
 
