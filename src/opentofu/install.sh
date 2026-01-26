@@ -7,7 +7,7 @@ source /usr/local/share/devcontainers/base/library.sh
 # renovate: datasource=github-releases depName=butane packageName=coreos/butane versioning=semver
 BUTANE_VERSION=0.25.1
 # renovate: datasource=github-releases depName=hcloud packageName=hetznercloud/cli versioning=semver
-HCLOUD_VERSION=1.60.0
+HCLOUD_VERSION=1.61.0
 # renovate: datasource=github-releases depName=opentofu packageName=opentofu/opentofu versioning=semver
 OPENTOFU_VERSION=1.11.3
 # renovate: datasource=github-releases depName=packer packageName=hashicorp/packer versioning=semver
