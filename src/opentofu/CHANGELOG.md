@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.7.0](https://github.com/stargrid-systems/devcontainer-features/compare/opentofu-v0.6.0...opentofu-v0.7.0) (2026-01-26)
+
+
+### Features
+
+* **deps:** update dependency butane to v0.26.0 ([#118](https://github.com/stargrid-systems/devcontainer-features/issues/118)) ([f171d8e](https://github.com/stargrid-systems/devcontainer-features/commit/f171d8e71df0005d4ce27f03e82b3bb2161e7110))
+* **deps:** update dependency hcloud to v1.61.0 ([#125](https://github.com/stargrid-systems/devcontainer-features/issues/125)) ([54c6e1c](https://github.com/stargrid-systems/devcontainer-features/commit/54c6e1ca4fa2c25ea4ff9f2ae87d4afa8b40eb3c))
+* **deps:** update dependency opentofu to v1.11.4 ([#117](https://github.com/stargrid-systems/devcontainer-features/issues/117)) ([ace105e](https://github.com/stargrid-systems/devcontainer-features/commit/ace105ef7b6fc67cff987535cc7e5abf153a4872))
+
 ## [0.6.0](https://github.com/stargrid-systems/devcontainer-features/compare/opentofu-v0.5.0...opentofu-v0.6.0) (2026-01-17)
 
 

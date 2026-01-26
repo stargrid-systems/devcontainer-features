@@ -1,11 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.6.0...base-v1.7.0) (2026-01-26)
+
+
+### Features
+
+* **deps:** update dependency cargo-binstall to v1.17.3 ([#116](https://github.com/stargrid-systems/devcontainer-features/issues/116)) ([2133db7](https://github.com/stargrid-systems/devcontainer-features/commit/2133db73d5ae758500b72d4bd22a9033830dad44))
+
 ## [1.6.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.5.0...base-v1.6.0) (2026-01-17)
 
 
 ### Features
 
-* **deps:** update dependency uv to v0.9.25 ([#101](https://github.com/stargrid-systems/devcontainer-features/issues/101)) ([1fd7488](https://github.com/stargrid-systems/devcontainer-features/commit/1fd7488798f4b01d2dd2a10eafd4b3a17f009544))
 * **deps:** update dependency uv to v0.9.26 ([#106](https://github.com/stargrid-systems/devcontainer-features/issues/106)) ([0fdca57](https://github.com/stargrid-systems/devcontainer-features/commit/0fdca57e7b6346fdc497e87290a3022717bf2d45))
 
 ## [1.5.0](https://github.com/stargrid-systems/devcontainer-features/compare/base-v1.4.1...base-v1.5.0) (2026-01-11)
