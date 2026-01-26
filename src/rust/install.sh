@@ -25,7 +25,7 @@ CARGO_UDEPS_VERSION=0.1.60
 # renovate: datasource=github-releases depName=kani packageName=model-checking/kani
 KANI_VERSION=0.66.0
 # renovate: datasource=crate packageName=release-plz versioning=semver
-RELEASE_PLZ_VERSION=0.3.151
+RELEASE_PLZ_VERSION=0.3.153
 
 APT_PACKAGES=(
     'cmake'        # Unfortunately used by some rust crates
