@@ -33,7 +33,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           ref: ${{ fromJSON(needs.release-please.outputs.pr).headBranchName }}
 
@@ -70,7 +70,7 @@ jobs:
       pull-requests: write
       packages: write
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
       - name: Publish Features
         uses: devcontainers/action@1082abd5d2bf3a11abccba70eef98df068277772 # v1
