@@ -11,7 +11,7 @@ HCLOUD_VERSION=1.61.0
 # renovate: datasource=github-releases depName=opentofu packageName=opentofu/opentofu versioning=semver
 OPENTOFU_VERSION=1.11.4
 # renovate: datasource=github-releases depName=packer packageName=hashicorp/packer versioning=semver
-PACKER_VERSION=1.14.3
+PACKER_VERSION=1.16.0
 # renovate: datasource=github-releases depName=terraform packageName=hashicorp/terraform versioning=semver
 TERRAFORM_VERSION=1.14.3
 
