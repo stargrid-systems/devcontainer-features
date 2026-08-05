@@ -15,7 +15,7 @@ CARGO_DENY_VERSION=0.19.0
 # renovate: datasource=github-releases depName=cargo-llvm-cov packageName=taiki-e/cargo-llvm-cov
 CARGO_LLVM_COV_VERSION=0.8.1
 # renovate: datasource=crate packageName=cargo-nextest versioning=semver
-CARGO_NEXTEST_VERSION=0.9.124
+CARGO_NEXTEST_VERSION=0.9.143
 # renovate: datasource=github-releases depName=cargo-semver-checks packageName=obi1kenobi/cargo-semver-checks
 CARGO_SEMVER_CHECKS_VERSION=0.46.0
 # renovate: datasource=github-releases depName=cargo-shear packageName=Boshen/cargo-shear
