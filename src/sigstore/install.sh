@@ -7,7 +7,7 @@ source /usr/local/share/devcontainers/base/library.sh
 # renovate: datasource=github-releases depName=cosign packageName=sigstore/cosign versioning=semver
 COSIGN_VERSION=3.0.4
 # renovate: datasource=github-releases depName=gitsign packageName=sigstore/gitsign versioning=semver
-GITSIGN_VERSION=0.13.0
+GITSIGN_VERSION=0.17.1
 # renovate: datasource=github-releases depName=rekor-cli packageName=sigstore/rekor versioning=semver
 REKOR_CLI_VERSION=1.5.0
 
