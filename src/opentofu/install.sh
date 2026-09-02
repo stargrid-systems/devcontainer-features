@@ -13,7 +13,7 @@ OPENTOFU_VERSION=1.11.4
 # renovate: datasource=github-releases depName=packer packageName=hashicorp/packer versioning=semver
 PACKER_VERSION=1.14.3
 # renovate: datasource=github-releases depName=terraform packageName=hashicorp/terraform versioning=semver
-TERRAFORM_VERSION=1.14.3
+TERRAFORM_VERSION=1.16.1
 
 handle_posener_complete() {
     local binary="${1:?}"
