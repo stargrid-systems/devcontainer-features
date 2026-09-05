@@ -7,7 +7,7 @@ source ./library.sh
 TARGET_SCRIPTS_DIR='/usr/local/share/devcontainers/base'
 
 # renovate: datasource=github-releases depName=cargo-binstall packageName=cargo-bins/cargo-binstall versioning=semver
-CARGO_BINSTALL_VERSION=1.17.3
+CARGO_BINSTALL_VERSION=1.23.0
 # renovate: datasource=github-releases depName=uv packageName=astral-sh/uv versioning=semver
 UV_VERSION=0.9.26
 APT_PACKAGES=(
